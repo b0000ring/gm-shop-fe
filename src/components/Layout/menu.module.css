@@ -1,0 +1,18 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  max-width: 800px;
+  margin: 48px auto;
+  font-weight: bold;
+}
+
+.divider {
+  height: 28px;
+  border-right: 2px solid #007CF9;
+}
+
+.menuItem {
+  margin: 0 4px;
+}

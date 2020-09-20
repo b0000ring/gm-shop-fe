@@ -1,0 +1,18 @@
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  background: #DCDCDC;
+}
+
+a, a:visited, a:active {
+  color: #007CF9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  border: none;
+}

@@ -1,0 +1,16 @@
+.cartButton {
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333333;
+  background-color: rgb(228, 228, 228);
+  padding: 8px 16px;
+}
+
+.cartButton:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+.cartButton svg {
+  margin-right: 8px;
+}

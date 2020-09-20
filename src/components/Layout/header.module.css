@@ -1,0 +1,22 @@
+.header {
+  padding: 32px;
+}
+
+.logo {
+  font-family: 'Press Start 2P';
+  font-size: 46px;
+}
+
+.logoStart {
+  color: #17395c;
+}
+
+.logoEnd {
+  color: #C24229;
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

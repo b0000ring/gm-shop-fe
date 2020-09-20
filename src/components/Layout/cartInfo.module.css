@@ -1,0 +1,10 @@
+.cartInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #787878;
+}
+
+.cartInfo div, a {
+  margin-right: 8px;
+}

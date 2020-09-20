@@ -1,0 +1,11 @@
+.layout {
+  background: white;
+  padding: 16px;
+  max-width: 1280px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
