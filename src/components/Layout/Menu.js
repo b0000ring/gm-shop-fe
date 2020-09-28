@@ -33,7 +33,6 @@ function MenuItem({ data: {name, link} }) {
           {name}
         </a>
       </div>
-      <div className={styles.divider}/>
     </>
   )
 }
@@ -41,8 +40,12 @@ function MenuItem({ data: {name, link} }) {
 function Menu() {
   return (
     <menu className={styles.menu}>
-      <div className={styles.divider}/>
-      {menuConfig.map(item => <MenuItem key={item.name} data={item} />)}
+      {menuConfig.map((item, i) => (
+        <>
+          <MenuItem key={item.name} data={item} />
+          {i !== menuConfig.length - 1 &&  <div className={styles.divider}/>}
+        </>
+      ))}
     </menu>
   )
 }

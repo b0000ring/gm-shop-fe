@@ -11,7 +11,20 @@
   color: #17395c;
 }
 
+.icons a {
+  width: 30px !important;
+  height: 30px !important;
+}
+
 .logoEnd {
+  color: #C24229;
+}
+
+.phone {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+  font-size: 26px;
   color: #C24229;
 }
 

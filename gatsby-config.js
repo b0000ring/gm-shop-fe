@@ -33,10 +33,12 @@ module.exports = {
         fonts: [
           {
             family: `Press Start 2P`,
-            variants: [`400`]
+            variants: [`400`],
+            subsets: [`cyrillic`]
           },
           {
             family: `Roboto`,
+            subsets: [`cyrillic`],
             variants: [`400`]
           },
         ],

@@ -5,12 +5,12 @@ body {
 }
 
 a, a:visited, a:active {
-  color: #007CF9;
+  color: #17395c;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #C24229;
 }
 
 button {
