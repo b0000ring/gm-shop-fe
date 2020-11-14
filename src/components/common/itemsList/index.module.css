@@ -1,0 +1,22 @@
+.itemsList {
+  margin: 32px 0;
+  max-width: 1060px;
+}
+
+.title {
+  margin: auto;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Press Start 2P';
+  color: #C24229;
+}
+
+.list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}

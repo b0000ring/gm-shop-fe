@@ -1,20 +1,21 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import styles from './menu.module.css'
 
 const menuConfig = [
   {
     name: 'ГЛАВНАЯ',
-    link: '#'
+    link: '/'
   },
   {
     name: 'КАТАЛОГ',
-    link: '#'
+    link: '/catalog'
   },
-  {
-    name: 'СТАТЬИ',
-    link: '#'
-  },
+  // {
+  //   name: 'СТАТЬИ',
+  //   link: '#'
+  // },
   {
     name: 'О НАС',
     link: '#'
@@ -29,9 +30,9 @@ function MenuItem({ data: {name, link} }) {
   return (
     <>
       <div className={styles.menuItem}>
-        <a href={link}>
+        <Link href={link}>
           {name}
-        </a>
+        </Link>
       </div>
     </>
   )

@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'gatsby'
+
 
 import CartButton from 'src/components/buttons/CartButton'
 import styles from './cartInfo.module.css'
@@ -6,9 +8,9 @@ import styles from './cartInfo.module.css'
 function CartInfo() {
   return (
     <div className={styles.cartInfo}>
-      <a href='#'>
+      <Link href='#'>
         6 товаров
-      </a>
+      </Link>
       <div>|</div>
       <div>
         3745 руб.
