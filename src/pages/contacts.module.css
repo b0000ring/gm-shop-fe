@@ -1,0 +1,17 @@
+.contact {
+  margin: 16px 0;
+  font-size: 18px;
+}
+
+.contact span {
+  font-weight: bold;
+}
+
+.info {
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}

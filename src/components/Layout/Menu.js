@@ -18,18 +18,20 @@ const menuConfig = [
   // },
   {
     name: 'О НАС',
-    link: '#'
+    link: '/about'
   },
   {
     name: 'КОНТАКТЫ',
-    link: '#'
+    link: '/contacts'
   }
 ]
 
 function MenuItem({ data: {name, link} }) {
+  
+  const isCurrent = window.location.pathname === link;
   return (
     <>
-      <div className={styles.menuItem}>
+      <div className={`${styles.menuItem} ${isCurrent && styles.active}`}>
         <Link href={link}>
           {name}
         </Link>

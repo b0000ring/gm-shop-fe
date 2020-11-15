@@ -16,3 +16,7 @@
   margin: 0 4px;
   font-family: 'Press Start 2P';
 }
+
+.active  a{
+  color: #C24229;
+}
