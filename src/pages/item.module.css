@@ -1,0 +1,65 @@
+.page {
+  width: 1000px;
+}
+
+.page label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.photo {
+  margin-right: 32px;
+}
+
+.photo :global(.image-gallery-content:not(.fullscreen)) :global(.image-gallery-image) {
+  width: 500px !important;
+}
+
+.photo :global(.image-gallery-content:not(.fullscreen)) :global(.image-gallery-svg) {
+  height: 70px;
+}
+
+.info {
+  margin-top: 64px;
+  font-size: 18px;
+}
+
+.mainText {
+  width: 800px;
+}
+
+.name {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 24px;
+  color: #C24229;
+  margin-bottom: 32px;
+}
+
+.color select, .cart input {
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+.cart button {
+  padding: 8px 16px;
+  margin-top: 32px;
+  background-color: #C24229;
+  color: white;
+  font-size: 24px;
+}
+
+.cart input {
+  margin-right: 16px;
+  width: 80px;
+}
