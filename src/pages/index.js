@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "src/components/Layout"
+import Layout from "src/components/layout"
 import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
 import Banner from 'src/components/common/banner'

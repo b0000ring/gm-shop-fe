@@ -1,0 +1,58 @@
+.table {
+  width: 1100px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table thead {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.table thead td {
+  padding: 0px 24px 24px 24px;
+}
+
+.table tbody tr  {
+  border-bottom: 1px solid #787878;
+}
+
+.table tbody tr:first-child {
+  border-top: 1px solid #787878;
+}
+
+.table tbody td {
+  padding: 0 32px;
+}
+
+.table tbody td:first-child {
+  padding: 0;
+}
+
+.table tbody td:last-child {
+  padding-left: 32px;
+}
+
+.total {
+  margin-top: 64px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.total div {
+  margin-right: 32px;
+  font-size: 32px;
+}
+
+.total div span {
+  color: #C24229;
+  font-weight: bold;
+}
+
+.total button {
+  padding: 8px 16px;
+  background-color: #C24229;
+  color: white;
+  font-size: 24px;
+}

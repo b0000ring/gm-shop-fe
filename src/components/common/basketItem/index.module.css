@@ -1,0 +1,20 @@
+.item {
+  font-size: 24px;
+}
+
+.image img {
+  width: 240px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.delete {
+  cursor: pointer;
+  color: #C24229;
+}
+
+.delete:hover {
+  color: #17395c;
+}

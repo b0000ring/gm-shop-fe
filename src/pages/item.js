@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageGallery from 'react-image-gallery'
 
-import Layout from 'src/components/Layout'
+import Layout from 'src/components/layout'
 import SEO from 'src/components/seo'
 import Tabs from 'src/components/common/tabs'
 
