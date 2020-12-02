@@ -43,7 +43,7 @@ const fields = [
   },
 ]
 
-function ContactForm() {
+function ContactForm({ onSubmit }) {
   return (
     <div>
       <h2>Форма оформления заказа</h2>
@@ -60,32 +60,23 @@ function ContactForm() {
           comment: ''
         }}
         validate={values => {
-          const errors = {};
-          
-          if (!values.email) {
-            errors.email = 'Обязательное поле';
-          } else if (
+          const errors = {}
+          if (
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = 'Некорректный E-mail адрес';
           }
 
-          if (!values.name) {
-            errors.name = 'Обязательное поле';
-          }
-
-          if (!values.message) {
-            errors.message = 'Обязательное поле';
-          }
-
-            return errors;
-          }}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
-       }}
+          fields.forEach(item => {
+            if(item.isRequired && !values[item.key]) {
+              errors[item.key] = 'Обязательное поле'
+            }
+          });
+          return errors;
+        }}
+        onSubmit={(values) => {
+          onSubmit()
+        }}
       >
         {({
           values,
@@ -109,6 +100,9 @@ function ContactForm() {
                   onBlur={handleBlur}
                   value={values[item.key]}
                 />
+                <div className={styles.error}>
+                  {errors[item.key] && touched[item.key] && errors[item.key]}
+                </div>
               </div>
             ))
           }

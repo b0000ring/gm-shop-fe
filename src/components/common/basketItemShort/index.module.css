@@ -1,0 +1,21 @@
+.item {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 2px solid #17395c;
+}
+
+.image img {
+  width: 80px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.info {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}

@@ -50,9 +50,45 @@
   font-weight: bold;
 }
 
-.total button {
+.button {
   padding: 8px 16px;
   background-color: #C24229;
   color: white;
   font-size: 24px;
+}
+
+.checkout {
+  width: 920px;
+  display: flex;
+  justify-content: center;
+}
+
+.checkout .section {
+  width: 50%;
+}
+
+.checkout .section:first-child {
+  margin-right: 32px;
+}
+
+.buttonWrapper {
+  margin-top: 64px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.checkout .section:first-child div {
+  margin: 16px 0;
+  font-size: 24px;
+}
+
+.resetButton {
+  color: #C24229;
+  background-color: white;
+  border: 2px solid #C24229;
+  margin-right: 16px;
+}
+
+.checkout .section:first-child div span {
+  font-weight: bold;
 }
