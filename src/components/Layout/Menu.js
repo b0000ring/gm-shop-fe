@@ -28,7 +28,7 @@ const menuConfig = [
 
 function MenuItem({ data: {name, link} }) {
   
-  const isCurrent = window.location.pathname === link;
+  const isCurrent = typeof window !== `undefined` && window.location.pathname === link;
   return (
     <>
       <div className={`${styles.menuItem} ${isCurrent && styles.active}`}>

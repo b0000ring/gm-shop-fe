@@ -39,7 +39,7 @@ const handled = [
 ]
 
 const Group = () => {
-  const url = new URL(window.location.href);
+  const url = new URL(typeof window !== `undefined` ? window.location.href : 'http://minibit.shop');
   const type = url.searchParams.get("type");
   return (
     <Layout> 
