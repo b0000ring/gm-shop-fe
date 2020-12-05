@@ -1,26 +1,22 @@
 import React from "react"
-import { graphql } from "gatsby"
 
 import Layout from "src/components/layout"
 import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
 import groupLabels from 'src/constants/groupLabels'
 
-const Catalog = ({ data }) => {
-  console.log(data)
-  const groups = data.categories.edges[0].node.categories
+const Group = ({ data }) => {
+  const group = data.group.edges[0].node
   return (
     <Layout> 
-      <SEO title="Catalog" />
-      {groups.map(item => (
-        <ItemsList title={groupLabels[item.name]} collection={item.items} items={data.items.edges} link={`/group/${item.name}`} />
-      ))}
+      <SEO title="Group" />
+      <ItemsList collection={group.value} title={groupLabels[group.name]} items={data.items.edges} />
     </Layout>
   )
 }
 
 export const query = graphql`
-  query {
+  query($name: String!) {
     items: allDataJson(filter: {type: {eq: "item"}}) {
       edges {
         node {
@@ -42,18 +38,16 @@ export const query = graphql`
         }
       }
     }
-    categories: allDataJson(filter: {type: {eq: "categories"}, name: {eq: "categories"}}) {
+    group: allDataJson(filter: {type: {eq: "collection"}, name: {eq: $name}}) {
       edges {
         node {
           id
-          categories {
-            items
-            name
-          }
+          name
+          value
         }
       }
     }
   }
 `
 
-export default Catalog
+export default Group

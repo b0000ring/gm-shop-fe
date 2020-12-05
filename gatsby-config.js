@@ -31,7 +31,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/src/data/`,
+        path: `${__dirname}/data/`,
         plugins: [
           `gatsby-transformer-json`
         ]
@@ -41,7 +41,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `./src/data/`,
+        path: `./data/`,
       },
     },
     'gatsby-plugin-root-import',

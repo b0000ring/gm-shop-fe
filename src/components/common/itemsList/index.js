@@ -5,9 +5,26 @@ import Item from 'src/components/common/item'
 
 import styles from './index.module.css'
 
-function ItemsList({ items, title, link }) {
-  function getItems() {
-    return items.map(item => <Item {...item} />)
+function ItemsList({ collection, items, title, link }) {
+  function getItemsList() {
+    const selected = collection.map(id => {
+      return items.find(item => {
+        if(item.node.id === id) {
+          return true
+        }
+
+        return false
+      })
+    })
+
+    return selected.map(item => (
+      <Item
+        id={item.node.id}
+        image={item.node.images[0].original}
+        name={item.node.name}
+        price={item.node.price}
+      />
+     ))
   }
   return (
     <div className={styles.itemsList}>
@@ -15,7 +32,7 @@ function ItemsList({ items, title, link }) {
         {link ? <Link href={link}>{title}</Link> : title}
       </div>
       <div className={styles.list}>
-       {getItems()}
+       {getItemsList()}
       </div>
     </div>
   )

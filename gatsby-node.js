@@ -3,7 +3,7 @@ const path = require(`path`)
 exports.createPages = async ({ graphql, actions }) => {
 
   const { createPage } = actions
-  const result = await graphql(`
+  const items = await graphql(`
     query {
       allDataJson(filter: {type: {eq: "item"}}) {
         edges {
@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  result.data.allDataJson.edges.forEach(({ node }) => {
+  items.data.allDataJson.edges.forEach(({ node }) => {
     createPage({
       path: `/item/${node.id}`,
       component: path.resolve(`./src/templates/item.js`),
@@ -23,4 +23,30 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   })
+
+  const groups = await graphql(`
+    query {
+      allDataJson(filter: {type: {eq: "collection"}}) {
+        edges {
+          node {
+            id
+            name
+            value
+          }
+        }
+      }
+    }
+  `)
+
+  groups.data.allDataJson.edges.forEach(({ node }) => {
+    createPage({
+      path: `/group/${node.name}`,
+      component: path.resolve(`./src/templates/group.js`),
+      context: {
+        name: node.name,
+      },
+    })
+  })
+
+  console.log(JSON.stringify(groups, null, 4))
 }

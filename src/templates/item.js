@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery'
 import { graphql } from "gatsby"
 
@@ -10,11 +10,12 @@ import styles from './item.module.css'
 
 const Item = ({ data }) => {
   const itemData = data.allDataJson.edges[0].node
-  console.log(itemData)
+  const [selectedColor, setSelectedColor] = useState(itemData.colors[0].value)
+  const [count, setCount] = useState(1)
   const tabs = [
     {
       label: 'Описание',
-      content: itemData.text
+      content: itemData.text.map(item => <p>{item}</p>)
     },
     {
       label: 'Особенности',
@@ -29,6 +30,12 @@ const Item = ({ data }) => {
       content: itemData.equipment.map(item => <li>{item}</li>)
     },
   ]
+
+  function getColors() {
+    return itemData.colors.map(item => {
+      return <option value={item.value}>{item.label}</option>
+    })
+  }
 
   return (
     <Layout> 
@@ -50,14 +57,14 @@ const Item = ({ data }) => {
             </div>
             <div className={styles.color}>
               <label>Цвет</label>
-              <select>
-                <option>Серый</option>
+              <select value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)}>
+                {getColors()}
               </select>
             </div>
             <div className={styles.cart}>
               <div>
                 <label>Количество</label>
-                <input type="number" />
+                <input value={count} min="1" max="99" onChange={e => setCount(e.target.value)} type="number" />
               </div>
               
               <button>Добавить в корзину</button>
@@ -82,6 +89,10 @@ export const query = graphql`
           images {
             original
             thumbnail
+          }
+          colors {
+            label
+            value
           }
           id
           features
