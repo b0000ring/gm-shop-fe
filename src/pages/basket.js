@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import clsx from 'clsx'
 
 import Layout from "src/components/layout"
@@ -6,52 +6,9 @@ import SEO from "src/components/seo"
 import BasketItem from 'src/components/common/basketItem'
 import BasketItemShort from 'src/components/common/basketItemShort'
 import OrderForm from 'src/forms/order'
-import styles from './basket.module.css'
+import * as cartController from 'src/controllers/cartController'
 
-
-const items = [
-  {
-    id: '00001',
-    count: 1,
-    color: 'grey',
-  },
-  {
-    id: '00002',
-    count: 2,
-    color: 'grey',
-  },
-  {
-    id: '00003',
-    count: 1,
-    color: 'grey',
-  }
-]
-
-const testData = {
-  images: [
-    {
-      original: '/test.PNG',
-      thumbnail: '/test.PNG',
-    },
-    {
-      original: '/test.PNG',
-      thumbnail: '/test.PNG',
-    },
-    {
-      original: '/test.PNG',
-      thumbnail: '/test.PNG',
-    }
-  ],
-  name: 'BittBoy',
-  price: 1020,
-  colors: [
-    {
-      label: 'серый',
-      value: 'grey'
-    }
-  ],
-  id: '00001',
-}
+import styles from './basket.module.css' 
 
 const testInfo = {
   address: "ул Попова, д 2, кв 100",
@@ -63,16 +20,26 @@ const testInfo = {
   surname: "Чиркин",
 }
 
+const name = 'basket'
+
 const Basket = () => {
+  //hack to force component update
+  const [updateState, setUpdateState] = useState({})
   const [isCorrect, setIsCorrect] = useState(false)
   const [isSubmited, setIsSubmited] = useState(false)
+  const items = cartController.getItems()
+
+  useEffect(() => {
+    cartController.subscribe(name, () => setUpdateState({}))
+    return () => cartController.unsubscribe(name)
+  }, [])
 
   function getItems() {
-    return items.map(item => <BasketItem orderInfo={item} itemData={testData} />)
+    return items.map(item => <BasketItem orderInfo={item} itemData={item.data} />)
   }
 
   function getShortItems() {
-    return items.map(item => <BasketItemShort orderInfo={item} itemData={testData} />)
+    return items.map(item => <BasketItemShort orderInfo={item} itemData={item.data} />)
   }
 
   function getComponent() {
@@ -124,7 +91,7 @@ const Basket = () => {
         </table>
         <div className={styles.total}>
           <div>
-            Итого: <span>{items.reduce((acc, val) => acc + testData.price * val.count, 0)} руб.</span>
+            Итого: <span>{cartController.getTotalSum()} руб.</span>
           </div>
           <button className={styles.button} onClick={() => setIsCorrect(true)}>Перейти к оформлению</button>
         </div>

@@ -6,8 +6,7 @@ import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
 import Banner from 'src/components/common/banner'
 
-const IndexPage = ({ data }) => {
-  console.log(data)
+const IndexPage = ({ data }) => { 
   const collection = data.collection.edges[0].node.value
   const items = data.items.edges
   return (

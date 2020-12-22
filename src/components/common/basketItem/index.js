@@ -1,8 +1,14 @@
 import React from 'react'
 
+import * as cartController from 'src/controllers/cartController'
+
 import styles from './index.module.css'
 
 function BasketItem({ orderInfo, itemData }) {
+  function removeItem() {
+    cartController.removeItem(itemData.id)
+  }
+
   return (
     <tr className={styles.item}>
       <td className={styles.image}>
@@ -21,7 +27,7 @@ function BasketItem({ orderInfo, itemData }) {
         {orderInfo.count * itemData.price} руб.
       </td>
       <td className={styles.delete}>
-        Удалить
+        <div onClick={removeItem}>Удалить</div>
       </td>
     </tr>
   )

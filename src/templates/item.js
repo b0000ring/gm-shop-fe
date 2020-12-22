@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import Layout from 'src/components/layout'
 import SEO from 'src/components/seo'
 import Tabs from 'src/components/common/tabs'
+import * as cartController from 'src/controllers/cartController'
 
 import styles from './item.module.css'
 
@@ -37,6 +38,10 @@ const Item = ({ data }) => {
     })
   }
 
+  function addToCart() {
+    cartController.addItem(itemData, count, selectedColor)
+  }
+
   return (
     <Layout> 
       <SEO title="Item" />
@@ -65,9 +70,8 @@ const Item = ({ data }) => {
               <div>
                 <label>Количество</label>
                 <input value={count} min="1" max="99" onChange={e => setCount(e.target.value)} type="number" />
-              </div>
-              
-              <button>Добавить в корзину</button>
+              </div> 
+              <button onClick={addToCart}>Добавить в корзину</button>
             </div>
           </div>
         </div>

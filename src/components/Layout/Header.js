@@ -25,8 +25,7 @@ function Header() {
           <div className={styles.phone}>
             +7 (995) 595-13-84
           </div>
-        </div>
-        
+        </div> 
       </div>
       <Menu/>
     </header>
