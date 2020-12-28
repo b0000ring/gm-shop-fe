@@ -46,6 +46,6 @@ function callSubs() {
 }
 
 export function unsubscribe(id) {
-  delete this.subscriptions[id]
+  delete subscriptions[id]
 }
 
