@@ -2,34 +2,12 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import styles from './menu.module.css'
-
-const menuConfig = [
-  {
-    name: 'ГЛАВНАЯ',
-    link: '/'
-  },
-  {
-    name: 'КАТАЛОГ',
-    link: '/catalog'
-  },
-  // {
-  //   name: 'СТАТЬИ',
-  //   link: '#'
-  // },
-  {
-    name: 'О НАС',
-    link: '/about'
-  },
-  {
-    name: 'КОНТАКТЫ',
-    link: '/contacts'
-  }
-]
+import menuConfig from '../../../constants/menuConfig'
 
 function MenuItem({ data: {name, link} }) {
   
   const isCurrent = typeof window !== `undefined` && window.location.pathname === link;
-  return (
+  return ( 
     <>
       <div className={`${styles.menuItem} ${isCurrent && styles.active}`}>
         <Link href={link}>
@@ -40,17 +18,20 @@ function MenuItem({ data: {name, link} }) {
   )
 }
 
-function Menu() {
+function Menu({ filter  }) {
   return (
     <menu className={styles.menu}>
-      {menuConfig.map((item, i) => (
+      {menuConfig.filter(filter).map((item, i) => (
         <>
           <MenuItem key={item.name} data={item} />
-          {i !== menuConfig.length - 1 &&  <div className={styles.divider}/>}
         </>
       ))}
     </menu>
   )
+}
+
+Menu.defaultProps = {
+  filter: () => true
 }
 
 export default Menu

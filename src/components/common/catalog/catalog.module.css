@@ -1,0 +1,56 @@
+.catalog {
+  cursor: pointer;
+  height: 44px;
+  width: 144px;
+  border-radius: 3px;
+  background-color: #ec2634;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.catalog img {
+  width: 20px;
+  margin-right: 16px;
+}
+
+.catalogWrapper {
+  position: relative;
+}
+
+.catalogList {
+  position: absolute;
+  z-index: 99;
+}
+
+.catalogList ul {
+  padding: 0;
+  list-style-type: none;
+  width: 355px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 5px 25px 0 rgba(192, 194, 207, 0.7);
+}
+
+.catalogList li {
+  padding: 16px 32px;
+  border-bottom: 1px solid #e3e5f3;
+  font-weight: bold;
+  font-size: 15px;
+  border-left: 4px solid transparent;
+}
+
+.catalogList li:hover {
+  border-left: 4px solid #ec2634;
+  cursor: pointer;
+}
+
+.catalogList li:hover a {
+  color: #ec2634 !important;
+}
+
+.catalogList li:last-child {
+  border-bottom: none;
+}

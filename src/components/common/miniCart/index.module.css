@@ -1,0 +1,51 @@
+.cartMini {
+  width: 355px;
+  box-shadow: 0px 5px 25px 0 rgba(192, 194, 207, 0.7);
+  border-radius: 3px;
+}
+
+.top {
+  background-color: white;
+  max-height: 290px;
+  overflow-y: scroll;
+}
+
+.bottom {
+  height: 84px;
+  background-color: #ec2634;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  color: white;
+}
+
+.bottom a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 107px;
+  height: 44px;
+  font-size: 14.5px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+.bottom a:hover {
+  background-color: white;
+  color: #ec2634;
+}
+
+.info div:first-child {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.info div:last-child {
+  font-size: 19.5px;
+  font-family: MontserratBold;
+}

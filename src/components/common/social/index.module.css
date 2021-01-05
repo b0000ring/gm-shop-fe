@@ -1,0 +1,9 @@
+.icons a {
+  width: 25px !important;
+  height: 25px !important;
+  margin-right: 16px;
+}
+
+.icons a:last-child {
+  margin-right: 0;
+}

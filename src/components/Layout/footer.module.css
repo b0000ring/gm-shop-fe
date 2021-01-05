@@ -1,15 +1,85 @@
 .footer {
-  margin-top: 64px;
-  font-size: 11px;
-  color: #787878;
+  padding: 40px 0;
+  background-color: #2c3364;
 }
 
-.footer div {
+.footer>div:first-child {
+  border-bottom: 1px solid #60668b;
+}
+
+.vsection {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
-.footer span {
-  margin: 8px;
+.vsection a {
+  color: #aaafcd !important;
+}
+
+.vsection a:hover {
+  color: #ec2634 !important;
+}
+
+.footer>div:first-child .vsection {
+  padding-bottom: 48px;
+}
+
+.footer>div:last-child .vsection {
+  padding-top: 24px;
+}
+
+.hsection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column;
+}
+
+.hsection:first-child a {
+  margin-bottom: 36px;
+}
+
+.hsection:first-child span:first-child, .hsection:first-child div:last-child {
+  color: #ffffff;
+}
+
+.hsection:first-child div:last-child {
+  font-size: 18px;
+  font-family: Montserrat;
+}
+
+.hsection:last-child {
+  align-items: flex-end;
+}
+
+.hsection:last-child menu {
+  margin: 0;
+  margin-bottom: 26px;
+}
+
+.hsection:last-child div:last-child a {
+  height: 44px !important;
+  width: 44px !important;
+}
+
+.copyright {
+  color: white;
+}
+
+.downloads {
+  margin-right: 400px;
+  flex-flow: row;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.downloads a:first-child {
+  margin-right: 16px;
+}
+
+.mail {
+  color: white;
+  font-weight: bold;
 }

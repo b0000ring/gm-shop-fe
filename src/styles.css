@@ -1,6 +1,11 @@
 @font-face {
-  font-family: Roboto;
-  src: url(/fonts/Roboto-Regular.ttf);
+  font-family: MontserratBold;
+  src: url(/fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(/fonts/Montserrat-Regular.ttf);
 }
 
 @font-face {
@@ -8,19 +13,26 @@
   src: url(/fonts/PressStart2P-Regular.ttf);
 }
 
+
+.content {
+  margin: auto;
+  min-width: 1200px;
+  max-width: 1200px;
+}
+
 body {
-  font-family: 'Roboto';
+  font-family: 'Montserrat';
   margin: 0;
-  background: #DCDCDC;
+  background: white;
 }
 
 a, a:visited, a:active {
-  color: #17395c;
+  color: #2b3263;
   text-decoration: none;
 }
 
 a:hover {
-  color: #C24229;
+  color: #ec2634;
 }
 
 button {

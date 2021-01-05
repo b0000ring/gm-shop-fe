@@ -1,0 +1,21 @@
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14.5px;
+  margin: 16px auto;
+  padding-left: 0;
+}
+
+.menuItem {
+  font-weight: bold;
+  margin-right: 40px;
+}
+
+.menuItem:last-child {
+  margin-right: 0;
+}
+
+.active  a{
+  color: #ec2634;
+}

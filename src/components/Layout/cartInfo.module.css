@@ -2,9 +2,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #787878;
 }
 
-.cartInfo div, a {
+.cartInfo div{
   margin-right: 8px;
+}
+
+.cartInfo div:first-child, .cartInfo div:nth-child(2) {
+  font-family: MontserratBold;
+}
+
+.cartInfo div:last-child {
+  font-weight: bold;
+}
+
+.wrapper {
+  position: relative
+}
+
+.cartMiniWrapper {
+  position: absolute;
+  top: 16px;
+  right: 0;
+  padding: 16px;
+  z-index: 99;
 }

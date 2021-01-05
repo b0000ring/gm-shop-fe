@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   groups.data.allDataJson.edges.forEach(({ node }) => {
     createPage({
-      path: `/group/${node.name}`,
+      path: `/catalog/${node.name}`,
       component: path.resolve(`./src/templates/group.js`),
       context: {
         name: node.name,

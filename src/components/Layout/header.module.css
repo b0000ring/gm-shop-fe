@@ -1,35 +1,38 @@
-.header {
-  padding: 32px;
+.header {}
+
+.workingHours {
+  font-size: 12.5px;
+  color: #2b3263;
+  font-weight: bold;
 }
 
-.logo {
-  font-family: 'Press Start 2P';
-  font-size: 46px;
-}
-
-.logoStart {
-  color: #17395c;
-}
-
-.icons a {
-  width: 30px !important;
-  height: 30px !important;
-}
-
-.logoEnd {
-  color: #C24229;
-}
-
-.phone {
+.headerSection {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 16px;
-  font-size: 26px;
-  color: #C24229;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .headerTop {
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.headerTop:last-child {
+  height: 75px;
+}
+
+.divider {
+  border-bottom: 1px solid #e3e5f3;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu>div:first-child {
+  margin-right: 40px;
 }

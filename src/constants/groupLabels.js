@@ -1,6 +1,6 @@
 const labels = {
-  handled: "КАРМАННЫЕ РЕТРО-ПРИСТАВКИ",
-  controllers: "ИГРОВЫЕ КОНТРОЛЛЕРЫ",
+  handled: "Портативные приставки",
+  controllers: "Игровые аксессуары",
 }
 
 export default labels

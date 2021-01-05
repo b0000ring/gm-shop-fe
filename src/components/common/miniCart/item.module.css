@@ -1,0 +1,39 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 104px;
+  padding: 24px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e3e5f3;
+}
+
+.photo {
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo img {
+  width: 75px;
+}
+
+.info {
+  width: 200px;
+}
+
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.name, .price {
+  font-weight: bold;
+}
+
+.color {
+  margin-bottom: 8px;
+}
+
