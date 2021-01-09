@@ -27,10 +27,10 @@ function Catalog() {
       className={styles.catalogWrapper}
       onMouseLeave={() => {setIsListVisible(false)}}
     >
-      <div className={styles.catalog}>
+      <Link href="/catalog" className={styles.catalog}>
         <img src={icon} />
         Каталог
-      </div>
+      </Link>
       {isListVisible && (
         <div className={styles.catalogList}>
           <ul>

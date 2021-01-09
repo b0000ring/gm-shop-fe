@@ -4,7 +4,7 @@
   width: 144px;
   border-radius: 3px;
   background-color: #ec2634;
-  color: white;
+  color: white !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,6 +27,7 @@
 
 .catalogList ul {
   padding: 0;
+  margin-top: 8px;
   list-style-type: none;
   width: 355px;
   border-radius: 3px;

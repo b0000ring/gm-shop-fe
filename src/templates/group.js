@@ -1,16 +1,27 @@
-import React from "react"
-
+import React from 'react'
+import { Link } from 'gatsby'
 import Layout from "src/components/layout"
 import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
 import groupLabels from 'src/constants/groupLabels'
+
+import styles from './group.module.css'
 
 const Group = ({ data }) => {
   const group = data.group.edges[0].node
   return (
     <Layout> 
       <SEO title="Group" />
-      <ItemsList collection={group.value} title={groupLabels[group.name]} items={data.items.edges} />
+      <div className="content">
+        <div className={styles.header}>
+          <h1>{groupLabels[group.name]}</h1>
+          <Link href="/catalog">Вернуться в каталог</Link>
+        </div>
+        <ItemsList collection={group.value} items={data.items.edges} />
+        <div className={styles.bottom}>
+          <Link href="/catalog">ПОСМОТРЕТЬ ДРУГИЕ КАТЕГОРИИ</Link>
+        </div>
+      </div>
     </Layout>
   )
 }

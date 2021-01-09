@@ -3,8 +3,14 @@ import { Link } from 'gatsby'
 
 import styles from './index.module.css'
 import icon from './icon.svg'
+import * as cartController from 'src/controllers/cartController'
 
-function Item({ id, image, name, price, newPrice }) {
+function Item({ id, image, name, price, newPrice, itemData }) {
+
+  function addToCart() {
+    cartController.addItem(itemData, 1, itemData.colors[0].value)
+  }
+
   return (
     <div className={styles.item}>
       <Link href={`/item/${id}`}>
@@ -22,9 +28,9 @@ function Item({ id, image, name, price, newPrice }) {
             {newPrice ? `${price} ₽` : null}
           </span>
         </div>
-        <Link herf="#">
+        <div onClick={addToCart}>
           <img src={icon} />
-        </Link>
+        </div>
       </div>
     </div>
   )

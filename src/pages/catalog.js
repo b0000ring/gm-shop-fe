@@ -6,6 +6,8 @@ import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
 import groupLabels from 'src/constants/groupLabels'
 
+import styles from './catalog.module.css'
+
 const Catalog = ({ data }) => {
   console.log(data)
   const groups = data.categories.edges[0].node.categories
@@ -13,7 +15,12 @@ const Catalog = ({ data }) => {
     <Layout> 
       <SEO title="Catalog" />
       {groups.map(item => (
-        <ItemsList title={groupLabels[item.name]} collection={item.items} items={data.items.edges} link={`/group/${item.name}`} />
+        <div className={styles.group}>
+          <div className="content">
+            <h1>Каталог</h1>
+            <ItemsList title={groupLabels[item.name]} collection={item.items} items={data.items.edges} link={`/catalog/${item.name}`} />
+          </div>
+        </div>
       ))}
     </Layout>
   )

@@ -12,6 +12,37 @@
   font-family: MontserratBold;
 }
 
+.groupTitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title a:first-child {
+  color: #ec2634;
+  text-decoration: underline;
+}
+
+.title a:last-child {
+  width: 160px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ec2634;
+  border-radius: 3px;
+  color: #ec2634;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.title a:last-child:hover  {
+  color: white;
+  background-color: #ec2634;
+  border: 1px solid white;
+}
+
 .list {
   display: flex;
   justify-content: flex-start;

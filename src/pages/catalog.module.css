@@ -1,0 +1,14 @@
+.group {
+  border-bottom: 1px solid #d9dcee;
+  width: 100%;
+}
+
+.group:last-child {
+  border: none;
+}
+
+.group h1 {
+  font-size: 36.5px;
+  font-family: MontserratBold;
+  color: #2b3263;
+}

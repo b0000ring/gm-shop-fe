@@ -23,13 +23,19 @@ function ItemsList({ collection, items, title, link }) {
         image={item.node.images[0].original}
         name={item.node.name}
         price={item.node.price}
+        itemData={item.node}
       />
      ))
   }
   return (
     <div className={styles.itemsList}>
       <div className={styles.title}>
-        {link ? <Link href={link}>{title}</Link> : title}
+        { link ? (
+          <div className={styles.groupTitle}>
+            <Link href={link}>{title}</Link>
+            <Link href={link}>Посмотреть все</Link>
+          </div>
+        ) : title }
       </div>
       <div className={styles.list}>
        {getItemsList()}
