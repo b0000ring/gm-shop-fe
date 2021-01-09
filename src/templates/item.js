@@ -6,8 +6,10 @@ import Layout from 'src/components/layout'
 import SEO from 'src/components/seo'
 import Tabs from 'src/components/common/tabs'
 import * as cartController from 'src/controllers/cartController'
+import Counter from 'src/components/common/counter'
 
 import styles from './item.module.css'
+import icon from 'src/components/common/item/icon.svg'
 
 const Item = ({ data }) => {
   const itemData = data.allDataJson.edges[0].node
@@ -20,15 +22,15 @@ const Item = ({ data }) => {
     },
     {
       label: 'Особенности',
-      content: itemData.features.map(item => <li>{item}</li>)
+      content: <ul>{itemData.features.map(item => <li>{item}</li>)}</ul>
     },
     {
       label: 'Характеристики',
-      content: itemData.characteristics.map(item => <li>{item}</li>)
+      content: <ul>{itemData.characteristics.map(item => <li>{item}</li>)}</ul>
     },
     {
       label: 'Комплектация',
-      content: itemData.equipment.map(item => <li>{item}</li>)
+      content: <ul>{itemData.equipment.map(item => <li>{item}</li>)}</ul>
     },
   ]
 
@@ -42,10 +44,11 @@ const Item = ({ data }) => {
     cartController.addItem(itemData, count, selectedColor)
   }
 
+
   return (
     <Layout> 
       <SEO title="Item" />
-      <div className={styles.page}>
+      <div className="content">
         <div className={styles.main}>
           <div className={styles.photo}>
             <ImageGallery
@@ -57,22 +60,26 @@ const Item = ({ data }) => {
             <div className={styles.name}>
               {itemData.name}
             </div>
+            <div className={styles.code}>
+              Артикул {itemData.id} 
+            </div>
+            <div className={styles.config}>
+              <div className={styles.color}>
+                <select value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)}>
+                  {getColors()}
+                </select>
+              </div>
+              <Counter number={count} onChange={(number) => setCount(number)} />
+            </div>
             <div className={styles.price}>
-              {itemData.price} руб.
+              <span>
+                {itemData.newPrice || itemData.price} ₽
+              </span>
+              <span>
+                {itemData.newPrice ? `${itemData.price} ₽` : null}
+              </span>
             </div>
-            <div className={styles.color}>
-              <label>Цвет</label>
-              <select value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)}>
-                {getColors()}
-              </select>
-            </div>
-            <div className={styles.cart}>
-              <div>
-                <label>Количество</label>
-                <input value={count} min="1" max="99" onChange={e => setCount(e.target.value)} type="number" />
-              </div> 
-              <button onClick={addToCart}>Добавить в корзину</button>
-            </div>
+            <button className={styles.addToCart} onClick={addToCart}><img src={icon} /> В корзину</button>
           </div>
         </div>
         <div className={styles.info}>

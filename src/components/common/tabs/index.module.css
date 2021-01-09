@@ -1,27 +1,35 @@
 .wrapper {
-  width: 800px;
   margin: auto;
 }
 
 .tabs {
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
+  justify-content: flex-start;
+  border-bottom: 1px solid #d9dcee;
 }
 
 .tab {
+  color: #2b3263;
   display: flex;
   justify-content: center;
-  width: 200px;
+  width: 220px;
+  font-family: MontserratBold;
+  font-size: 21px;
   padding-bottom: 16px;
   cursor: pointer;
+  margin-bottom: -1px;
 }
 
 .tab:hover, .active{
-  border-bottom: 2px solid #17395c;
-  color: #C24229;
+  border-bottom: 3px solid #ec2634;
+  color: #ec2634;
 }
 
 .content {
   margin-top: 32px;
+  max-width: 800px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.63;
+  color: #2b3263;
 }

@@ -7,6 +7,7 @@ import Phone from '../common/phone'
 import Logo from '../common/logo'
 import Menu from '../common/menu'
 import Social from '../common/social'
+import icon from './email.svg'
 
 function Footer() {
   return (
@@ -40,7 +41,7 @@ function Footer() {
               </Link>
             </div>
             <div className={clsx(styles.hsection, styles.mail)}>
-              hello@minibit.shop
+              <img src={icon} /> hello@minibit.shop
             </div>
           </div>
         </div>
