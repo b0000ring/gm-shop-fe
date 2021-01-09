@@ -42,6 +42,10 @@
   border-left: 4px solid transparent;
 }
 
+.catalogList li:before {
+  display: none;
+}
+
 .catalogList li:hover {
   border-left: 4px solid #ec2634;
   cursor: pointer;
