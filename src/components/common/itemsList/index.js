@@ -23,6 +23,7 @@ function ItemsList({ collection, items, title, link }) {
         image={item.node.images[0].original}
         name={item.node.name}
         price={item.node.price}
+        newPrice={item.node.newPrice}
         itemData={item.node}
       />
      ))

@@ -45,6 +45,7 @@ export const query = graphql`
           features
           name
           price
+          newPrice
           text
         }
       }

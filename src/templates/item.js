@@ -97,6 +97,7 @@ export const query = graphql`
         node {
           characteristics
           equipment
+          newPrice
           images {
             original
             thumbnail
