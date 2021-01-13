@@ -1,7 +1,26 @@
+.tableWrapper {
+  padding: 0 40px;
+  border: 1px solid #d9dcee;
+}
+
 .table {
-  width: 1100px;
+  width: 100%;
   text-align: center;
   border-collapse: collapse;
+}
+
+.header {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 36.5px;
+  color: #2b3263;
+  font-family: MontserratBold;
 }
 
 .table thead {
@@ -9,16 +28,30 @@
   font-size: 24px;
 }
 
+.back {
+  width: 194px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ec2634;
+  border-radius: 3px;
+  color: #ec2634 !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.back:hover {
+  background-color: #ec2634;
+  color: white !important;
+}
+
 .table thead td {
   padding: 0px 24px 24px 24px;
 }
 
 .table tbody tr  {
-  border-bottom: 1px solid #787878;
-}
-
-.table tbody tr:first-child {
-  border-top: 1px solid #787878;
+  border-bottom: 1px solid #d9dcee;
 }
 
 .table tbody td {
@@ -34,37 +67,63 @@
 }
 
 .total {
-  margin-top: 64px;
+  margin: 32px 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-}
-
-.total div {
-  margin-right: 32px;
-  font-size: 32px;
-}
-
-.total div span {
-  color: #C24229;
+  font-size: 21px;
+  color: #2b3263;
   font-weight: bold;
 }
 
+.total>div:first-child {
+  margin-left: 198px;
+}
+
+.finalPrice {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.finalPrice span {
+  font-size: 29.5px;
+  font-family: MontserratBold;
+  color: #ec2634;
+  margin-left: 24px;
+}
+
 .button {
-  padding: 8px 16px;
-  background-color: #C24229;
   color: white;
-  font-size: 24px;
+  font-size: 17.5px;
+  background-color: #ec2634;
+  border: 1px solid #ec2634;
+  border-radius: 3px;
+  padding: 16px 24px;
+  margin-left: 72px;
+}
+
+.button:hover {
+  color: #ec2634;
+  background-color: white;
+}
+
+.buttonReverse {
+  font-size: 17.5px;
+  border-radius: 3px;
+  padding: 16px 24px;
+  color: #ec2634;
+  background-color: white;
+  border: 1px solid #ec2634;
+}
+
+.buttonReverse:hover {
+  color: white;
+  background-color: #ec2634;
 }
 
 .checkout {
-  width: 920px;
   display: flex;
-  justify-content: center;
-}
-
-.checkout .section {
-  width: 50%;
+  justify-content: space-between;
 }
 
 .checkout .section:first-child {
@@ -72,14 +131,9 @@
 }
 
 .buttonWrapper {
-  margin-top: 64px;
+  margin-top: 48px;
   display: flex;
   justify-content: flex-end;
-}
-
-.checkout .section:first-child div {
-  margin: 16px 0;
-  font-size: 24px;
 }
 
 .resetButton {
@@ -89,6 +143,91 @@
   margin-right: 16px;
 }
 
-.checkout .section:first-child div span {
-  font-weight: bold;
+.checkout h4 {
+  color: #2b3263;
+  font-size: 18px;
+  font-family: MontserratBold;
+}
+
+.info div {
+  display: flex;
+  border-bottom: 1px solid #d9dcee;
+  padding: 16px;
+  width: 400px;
+}
+
+.info div:last-child {
+  border-bottom: none;
+}
+
+.info span {
+  font-size: 14.5px;
+  color: #2b3263;
+}
+
+.info span:first-child {
+  min-width: 150px;
+  font-family: MontserratBold;
+}
+
+.miniTableWrapper {
+  width: 720px;
+  box-sizing: border-box;
+  padding: 0 32px;
+}
+
+.miniTableWrapper tr {
+  height: 120px;
+}
+
+.miniTableWrapper img {
+  width: 82px;
+}
+
+.miniTableWrapper td:nth-child(2) div {
+  display: flex;
+  flex-flow: column-reverse;
+  font-size: 15px;
+}
+
+.miniTableWrapper td:nth-child(2) span {
+  font-size: 12px;
+  text-align: start;
+  width: 110px;
+  margin-top: 16px;
+}
+
+.miniTableWrapper td:nth-child(3) {
+  font-size: 15px;
+}
+
+.miniTableWrapper td:nth-child(5) div {
+  font-size: 21px;
+  color: #2b3263;
+  padding-left: 0;
+}
+
+.miniTableWrapper td:nth-child(5) span {
+  display: none;
+}
+
+.miniTableWrapper td:nth-child(6) {
+  display: none;
+}
+
+.miniTableWrapper .total {
+  margin: 16px 0;
+}
+
+.miniTableWrapper .total div:first-child {
+  margin-left: 120px;
+  font-size: 16px;
+}
+
+.miniTableWrapper .finalPrice {
+  font-size: 14px;
+}
+
+.miniTableWrapper .finalPrice span {
+  font-size: 24px;
 }

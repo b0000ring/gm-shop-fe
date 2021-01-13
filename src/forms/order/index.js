@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik } from 'formik'
+import { Link } from 'gatsby'
 
 import styles from './index.module.css'
+import clsx from 'clsx'
 
 const fields = [
   {
@@ -17,11 +19,10 @@ const fields = [
     isRequired: true,
   },
   {
-    label: 'Адрес доставки',
+    label: 'Адрес доставки (Город, улица, дом, квартира)',
     type: 'text',
     key: 'address',
     isRequired: true,
-    placeholder: 'Город, улица, номер дома, номер квартиры'
   },
   {
     label: 'Почтовый индекс',
@@ -44,10 +45,13 @@ const fields = [
 ]
 
 function ContactForm({ onSubmit }) {
+  const [isAgree, setIsAgree] = useState(false)
   return (
-    <div>
-      <h2>Форма оформления заказа</h2>
-      <h4>Пожалуйста, проверьте корректность данных для доставки</h4>
+    <div className={styles.wrapper}>
+      <p>
+        Пожалуйста, заполните все обязательные поля формы и проверьте правильность данных для оформления и доставки 
+        заказа. 
+      </p>
       <Formik
         initialValues={{ 
           name: '',
@@ -75,7 +79,7 @@ function ContactForm({ onSubmit }) {
           return errors;
         }}
         onSubmit={(values) => {
-          onSubmit()
+          onSubmit(values)
         }}
       >
         {({
@@ -86,31 +90,31 @@ function ContactForm({ onSubmit }) {
           handleBlur,
           handleSubmit,
           isSubmitting,
-        /* and other goodies */
         }) => {
           function getInputs() {
-            return fields.map(item => (
-              <div className={styles.formItem}>
-                <label>{item.label}</label>
-                <input
-                  placeholder={item.placeholder}
-                  type={item.type}
-                  name={item.key}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values[item.key]}
-                />
-                <div className={styles.error}>
-                  {errors[item.key] && touched[item.key] && errors[item.key]}
+            return fields.map(item => {
+              const isError = errors[item.key] && touched[item.key]
+              return (
+                <div className={clsx(styles.formItem, isError && styles.errorWrapper)}>
+                  <input
+                    placeholder={item.label}
+                    type={item.type}
+                    name={item.key}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values[item.key]}
+                  />
+                  <div className={styles.error}>
+                    {isError && errors[item.key]}
+                  </div>
                 </div>
-              </div>
-            ))
+              )
+            })
           }
           return (
             <form className={styles.contactsForm} onSubmit={handleSubmit}>
               {getInputs()}
               <div className={styles.formItem}>
-                <label>Комментарий</label>
                 <textarea
                   placeholder="Дополнительная информация для службы доставки"
                   type="text"
@@ -123,7 +127,11 @@ function ContactForm({ onSubmit }) {
                   {errors.message && touched.message && errors.message}
                 </div>
               </div>
-              <button className={styles.submitButton} type="submit" disabled={isSubmitting}>
+              <div className={styles.agreement}>
+                <input type="checkbox" value={isAgree} onChange={() => setIsAgree(!isAgree)} />
+                Я согласен(на) с <Link href="#"> политикой обработки персональных данных</Link>
+              </div>
+              <button className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting}>
                 Перейти к подтверждению
               </button>
             </form>

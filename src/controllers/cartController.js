@@ -30,7 +30,7 @@ export function  getItems() {
 
 export function  getTotalSum() {
   const items = this.getItems()
-  return items.reduce((acc, val) => acc + val.data.price * val.count, 0)
+  return items.reduce((acc, val) => acc + (val.data.newPrice || val.data.price) * val.count, 0)
 }
 
 export function  subscribe(id, callback) {

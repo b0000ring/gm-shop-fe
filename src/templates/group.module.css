@@ -25,6 +25,11 @@
   font-weight: bold;
 }
 
+.header a:last-child:hover {
+  background-color: #ec2634;
+  color: white;
+}
+
 .bottom {
   width: 100%;
   margin-top: 48px;

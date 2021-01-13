@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import clsx from 'clsx'
-
+import { Link } from 'gatsby'
 import Layout from "src/components/layout"
 import SEO from "src/components/seo"
 import BasketItem from 'src/components/common/basketItem'
@@ -10,16 +10,6 @@ import * as cartController from 'src/controllers/cartController'
 
 import styles from './basket.module.css' 
 
-const testInfo = {
-  address: "ул Попова, д 2, кв 100",
-  comment: "Позвоните, как будете по адресу",
-  email: "hello@alexchirkin.me",
-  name: "Александр",
-  phone: "+79955231123",
-  postIndex: "197000",
-  surname: "Чиркин",
-}
-
 const name = 'basket'
 
 const Basket = () => {
@@ -28,6 +18,7 @@ const Basket = () => {
   const [isCorrect, setIsCorrect] = useState(false)
   const [isSubmited, setIsSubmited] = useState(false)
   const items = cartController.getItems()
+  const [orderData, setOrderData] = useState({})
 
   useEffect(() => {
     cartController.subscribe(name, () => setUpdateState({}))
@@ -42,58 +33,98 @@ const Basket = () => {
     return items.map(item => <BasketItemShort orderInfo={item} itemData={item.data} />)
   }
 
+  function getItemsCount() {
+    let total = 0
+    items.forEach(item => total += item.count)
+    return total
+  }
+
+  function submitForm(data) {
+    setIsSubmited(true)
+    console.log(data)
+    setOrderData(data)
+  }
+
   function getComponent() {
     if(isSubmited) {
       return (
         <div>
-          <h2>Подтверждение информации для заказа</h2>
+          <div className={styles.header}>
+            <h2 className={styles.title}>Подтверждение заказа</h2>
+          </div>
           <div className={styles.checkout}>
-            <div className={styles.section}>
+            <div className={clsx(styles.section, styles.info)}>
               <h4>Информация для доставки</h4>
-              <div>Имя: <span>{testInfo.name}</span></div>
-              <div>Фамилия: <span>{testInfo.surname}</span></div>
-              <div>Адрес: <span>{testInfo.address}</span></div>
-              <div>Телефон: <span>{testInfo.phone}</span></div>
-              <div>E-mail: <span>{testInfo.email}</span></div>
-              <div>Почтовый индекс: <span>{testInfo.postIndex}</span></div>
-              <div>Комментарий: <span>{testInfo.comment}</span></div>
+              <div><span>Имя:</span><span>{orderData.name}</span></div>
+              <div><span>Фамилия:</span><span>{orderData.surname}</span></div>
+              <div><span>Адрес:</span><span>{orderData.address}</span></div>
+              <div><span>Индекс:</span><span>{orderData.postIndex}</span></div>
+              <div><span>Телефон:</span><span>{orderData.phone}</span></div>
+              <div><span>E-mail:</span><span>{orderData.email}</span></div>
+              <div><span>Комментарий:</span><span>{orderData.comment}</span></div>
             </div>
             <div className={styles.section}>
               <h4>Выбранные товары</h4>
-              {getShortItems()}
+              <div className={clsx(styles.miniTableWrapper, styles.tableWrapper)}>
+                <table className={styles.table}>
+                  <tbody>
+                    {getItems()}
+                  </tbody>
+                </table>
+                <div className={styles.total}>
+                  <div>
+                    {getItemsCount()} товара
+                  </div>
+                  <div className={styles.finalPrice}>
+                    Итого: <span>{cartController.getTotalSum()} ₽</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className={styles.buttonWrapper}>
-            <button className={clsx(styles.button, styles.resetButton)} onClick={() => setIsSubmited(false)}>Изменить данные</button>
-            <button className={styles.button} onClick={() => setIsCorrect(true)}>Перейти к онлайн-оплате</button>
+            <button className={clsx(styles.buttonReverse)} onClick={() => setIsSubmited(false)}>Изменить данные</button>
+            <button className={styles.button} onClick={() => setIsCorrect(true)}>Оплатить</button>
           </div>
         </div>
       )
     } else if(isCorrect) {
-      return <OrderForm onSubmit={() => setIsSubmited(true)} />
+      return (
+        <div>
+          <div className={styles.header}>
+            <h1 className={styles.title}>
+              Оформление заказа
+            </h1>
+          </div>
+          <OrderForm onSubmit={submitForm} />
+        </div>    
+      )
     }
     return (
       <div>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <td></td>
-              <td>Наименование</td>
-              <td>Цвет</td>
-              <td>Количество</td>
-              <td>Цена</td>
-              <td></td>
-            </tr>
-          </thead>
-          <tbody>
-            {getItems()}
-          </tbody>
-        </table>
-        <div className={styles.total}>
-          <div>
-            Итого: <span>{cartController.getTotalSum()} руб.</span>
+        <div className={styles.header}>
+          <h1 className={styles.title}>
+            Моя корзина
+          </h1>
+          <Link href="/catalog" className={styles.back}>
+            Вернуться к покупкам
+          </Link>
+        </div>
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <tbody>
+              {getItems()}
+            </tbody>
+          </table>
+          <div className={styles.total}>
+            <div>
+              В корзине {getItemsCount()} товара
+            </div>
+            <div className={styles.finalPrice}>
+              Итого: <span>{cartController.getTotalSum()} ₽</span>
+              <button className={styles.button} onClick={() => setIsCorrect(true)}>Оформить заказ</button>
+            </div>
           </div>
-          <button className={styles.button} onClick={() => setIsCorrect(true)}>Перейти к оформлению</button>
         </div>
       </div>
     )
@@ -102,7 +133,9 @@ const Basket = () => {
   return (
     <Layout> 
       <SEO title="Basket" />
-      {getComponent()}
+      <div className="content">
+        {getComponent()}
+      </div>
     </Layout>
   )
 }

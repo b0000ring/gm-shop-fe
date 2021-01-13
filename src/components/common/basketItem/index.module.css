@@ -1,20 +1,66 @@
 .item {
-  font-size: 24px;
+  height: 175px;
+  color: #2b3263;
+  font-weight: bold;
 }
 
 .image img {
-  width: 240px;
+  width: 115px;
 }
 
 .name {
-  font-weight: bold;
+  font-size: 18px;
+}
+
+.name div {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.name span {
+  color: #aaafcd;
+  font-size: 12px;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .delete {
   cursor: pointer;
-  color: #C24229;
 }
 
-.delete:hover {
-  color: #17395c;
+.delete div {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ec2634;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete div img {
+  width: 10px;
+}
+
+.price {
+  font-size: 24.5px;
+  color: #ec2634;
+}
+
+.price div {
+  font-family: MontserratBold;
+  padding-left: 40px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.price span {
+  font-size: 14px;
+  color: #2b3263;
+  font-family: Montserrat;
+  text-decoration: line-through;
 }

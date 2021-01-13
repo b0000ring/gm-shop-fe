@@ -1,8 +1,21 @@
+.wrapper {
+  display: flex;
+}
+
+.wrapper p {
+  font-size: 16px;
+  color: #2b3263;
+  width: 280px;
+  font-weight: bold;
+  margin-right: 80px;
+  line-height: 1.63;
+}
+
 .contactsForm {
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .formItem {
@@ -20,33 +33,64 @@
   font-weight: bold;
 }
 
-.formItem input {
-  padding: 0 8px;
-  height: 30px;
-  width: 600px;
-  font-size: 16px;
-
+.formItem input, .formItem textarea {
+  border: 1px solid #d9dcee;
+  border-radius: 3px;
+  font-family: MontserratBold;
+  padding: 0 16px;
+  height: 44px;
+  width: 480px;
+  font-size: 14.5px;
 }
 
 .formItem textarea {
-  height: 160px;
-  width: 600px;
-  padding: 8px;
-  font-size: 16px;
+  height: 90px;
+  padding-top: 16px;
+}
+
+.errorWrapper input {
+  border: 1px solid #ec2634;
 }
 
 .error {
-  color: red;
+  color: #ec2634;
   font-size: 14px;
   margin-top: 8px;
+  margin-left: 16px;
   font-weight: bold;
   opacity: 0.8;
 }
 
 .submitButton {
-  font-size: 24px;
-  padding: 8px;
-  height: 50px;
-  background-color: #C24229;
   color: white;
+  font-size: 17.5px;
+  background-color: #ec2634;
+  border: 1px solid #ec2634;
+  border-radius: 3px;
+  padding: 16px 24px;
+}
+
+.submitButton:hover {
+  color: #ec2634;
+  background-color: white;
+}
+
+.agreement {
+  font-family: MontserratBold;
+  color: #31386c;
+  margin-bottom: 40px;
+}
+
+.agreement input {
+  margin-left: 0;
+  margin-right: 16px;
+}
+
+.agreement a {
+  text-decoration: underline;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
