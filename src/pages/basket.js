@@ -41,7 +41,6 @@ const Basket = () => {
 
   function submitForm(data) {
     setIsSubmited(true)
-    console.log(data)
     setOrderData(data)
   }
 

@@ -1,17 +1,50 @@
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 .contact {
-  margin: 16px 0;
-  font-size: 18px;
+  margin-bottom: 48px;
+}
+
+.contact img {
+  width: 16px;
+  margin-right: 16px;
 }
 
 .contact span {
   font-weight: bold;
+  color: #2b3263;
+  font-size: 24px;
 }
 
 .info {
-  width: 620px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 32px;
+  margin-top: 96px;
+}
+
+.header {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 36.5px;
+  color: #2b3263;
+  font-family: MontserratBold;
+}
+
+.text {
+  width: 285px;
+  font-size: 16px;
+  margin-top: 96px;
+  color: #2b3263;
+  font-weight: bold;
 }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect  } from 'react'
-import { navigate  } from 'gatsby'
+import { navigate, Link } from 'gatsby'
 import { Formik } from 'formik'
 import clsx from 'clsx'
 
 import styles from './index.module.css'
 
 function ContactForm({ onSubmit }) {
-
+  const [isAgree, setIsAgree] = useState(false)
   const [captchaCheckError, setCaptchaCheckError] = useState(false)
   const [captcha, setCaptcha] = useState(null)
   function getCaptcha() {
@@ -29,8 +29,7 @@ function ContactForm({ onSubmit }) {
 
   return (
     <div>
-      <h2>Форма обратной связи</h2>
-      <h4>Заполните форму, чтобы задать интересующий Вас вопрос</h4>
+      <h2 className={styles.title}>Задайте нам вопрос</h2>
       <Formik
         initialValues={{ email: '', name: '', message: '', captcha: '' }}
         validate={values => {
@@ -86,11 +85,11 @@ function ContactForm({ onSubmit }) {
         /* and other goodies */
         }) => (
           <form className={styles.contactsForm} onSubmit={handleSubmit}>
-            <div className={styles.formItem}>
-              <label>Ваше имя</label>
+            <div className={clsx(styles.formItem, errors.name && touched.name && styles.errorWrapper)}>
               <input
                 type="text"
                 name="name"
+                placeholder="Ваше имя"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
@@ -99,11 +98,11 @@ function ContactForm({ onSubmit }) {
                 {errors.name && touched.name && errors.name}
               </div>
             </div>
-            <div className={styles.formItem}>
-              <label>Ваш e-mail</label>
+            <div className={clsx(styles.formItem, errors.email && touched.email && styles.errorWrapper)}>
               <input
                 type="email"
                 name="email"
+                placeholder="Ваш E-mail"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
@@ -112,10 +111,9 @@ function ContactForm({ onSubmit }) {
                 {errors.email && touched.email && errors.email}
               </div>
             </div>
-            <div className={styles.formItem}>
-              <label>Сообщение</label>
+            <div className={clsx(styles.formItem, errors.message && touched.message && styles.errorWrapper)}>
               <textarea
-                type="text"
+                placeholder="Сообщение"
                 name="message"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -126,24 +124,29 @@ function ContactForm({ onSubmit }) {
               </div>
             </div>
             <div className={styles.bottomPart}>
+              <div className={styles.agreement}>
+                <input type="checkbox" value={isAgree} onChange={() => setIsAgree(!isAgree)} />
+                Я согласен(на) с <Link href="#"> политикой обработки персональных данных</Link>
+              </div>
               <div className={clsx(styles.formItem, styles.captcha)}>
-                <label>Капча</label>
-                <div className={styles.captchaBody}>
+                <div className={clsx(styles.captchaBody, errors.captcha && touched.captcha && styles.errorWrapper)}>
+                  <img src={'data:image/svg+xml;base64,' + btoa(captcha)} />
                   <input 
+                    placeholder="Капча"
                     type="text"
                     name="captcha"
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.captcha}
                   />
-                  <img onClick={getCaptcha} src={'data:image/svg+xml;base64,' + btoa(captcha)} />
                 </div>
                 <div className={styles.error}>
                   {errors.captcha && touched.captcha && errors.captcha}
                   {captchaCheckError && 'Ошибка в капче'}
                 </div>
+                <div onClick={getCaptcha} className={styles.captchaUpdate}>Обновить</div>
               </div>
-              <button className={styles.submitButton} type="submit" disabled={isSubmitting}>
+              <button className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting || !isAgree}>
                 Отправить
               </button>
             </div>
