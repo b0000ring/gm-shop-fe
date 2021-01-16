@@ -1,0 +1,31 @@
+.about h1 {
+  font-size: 36.5px;
+  color: #2b3263;
+  font-family: MontserratBold;
+}
+
+.about h3 {
+  font-size: 24px;
+  color: #2b3263;
+  font-family: MontserratBold;
+}
+
+.about p {
+  color: #2b3263;
+  width: 820px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.about a {
+  font-family: MontserratBold;
+}
+
+.about>div {
+  margin-top: 24px;
+}
+
+.about div a {
+  width: 48px !important;
+  height: 48px !important;
+}
