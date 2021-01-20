@@ -55,11 +55,20 @@
   box-sizing: border-box;
 }
 
-.price img {
+.addButton {
   width: 34px;
   height: 34px;
   border-radius: 3px;
+  background-color: #ec2634;
+  display: flex;
+  justify-content: center;
   cursor: pointer;
+  align-items: center;
+}
+
+.price img {
+  width: 16px;
+  height: 16px;
 }
 
 .price span:last-child {

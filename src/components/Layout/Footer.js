@@ -33,15 +33,15 @@ function Footer() {
               Copyright MINIBIT @ 2020
             </div>
             <div className={clsx(styles.hsection, styles.downloads)}>
-              <Link href="#">
+              <Link href="/docs/terms.docx" target="_blank">
                 Условия
               </Link>
-              <Link href="#">
+              <Link href="/docs/privacy.docx" target="_blank">
                 Политика конфеденциальности
               </Link>
             </div>
             <div className={clsx(styles.hsection, styles.mail)}>
-              <img src={icon} /> hello@minibit.shop
+              <img src={icon} /> <Link href="mailto:hello@minibit.shop">hello@minibit.shop</Link>
             </div>
           </div>
         </div>

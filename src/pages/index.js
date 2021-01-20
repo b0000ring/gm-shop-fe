@@ -7,6 +7,10 @@ import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
 import Banner from 'src/components/common/banner'
 
+import heartIcon from './heart.svg'
+import carIcon from './car.svg'
+import lampIcon from './lamp.svg'
+import locationIcon from './location.svg'
 import styles from './index.module.css'
 
 const IndexPage = ({ data }) => { 
@@ -42,18 +46,18 @@ const IndexPage = ({ data }) => {
           <div>
             <div className={styles.line}>
               <div className={styles.section}>
-                <img src="/icons/location.svg" /> MINIBIT находится <br /> в Санкт-Петербурге
+                <img src={locationIcon} /> MINIBIT находится <br /> в Санкт-Петербурге
               </div>
               <div className={styles.section}>
-                <img src="/icons/percent.svg" /> Регулярные скидки <br /> и акции
+                <img src={heartIcon} /> Регулярные скидки <br /> и акции
               </div>
             </div>
             <div className={styles.line}>
               <div className={styles.section}>
-                <img src="/icons/truck.svg" /> Быстрая доставка <br /> по России
+                <img src={carIcon} /> Быстрая доставка <br /> по России
               </div>
               <div className={styles.section}>
-               <img src="/icons/check.svg" /> Чек и гарантия на все товары 
+               <img src={lampIcon} /> Чек и гарантия на все товары 
               </div>
             </div>
           </div>

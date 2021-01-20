@@ -129,7 +129,7 @@ function ContactForm({ onSubmit }) {
               </div>
               <div className={styles.agreement}>
                 <input type="checkbox" value={isAgree} onChange={() => setIsAgree(!isAgree)} />
-                Я согласен(на) с <Link href="#"> политикой обработки персональных данных</Link>
+                Я согласен(на) с <Link href="/docs/privacy.docx"> политикой обработки персональных данных</Link>
               </div>
               <button className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting}>
                 Перейти к подтверждению

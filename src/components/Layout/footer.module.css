@@ -83,8 +83,11 @@
 .mail {
   flex-flow: row;
   align-items: center !important;
-  color: white;
   font-weight: bold;
+}
+
+.mail a {
+  color: white !important;
 }
 
 .mail img {

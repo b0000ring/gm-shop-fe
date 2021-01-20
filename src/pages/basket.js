@@ -121,7 +121,7 @@ const Basket = () => {
             </div>
             <div className={styles.finalPrice}>
               Итого: <span>{cartController.getTotalSum()} ₽</span>
-              <button className={styles.button} onClick={() => setIsCorrect(true)}>Оформить заказ</button>
+              <button disabled={getItemsCount() === 0} className={clsx(styles.button, (getItemsCount() === 0) && styles.disabled)} onClick={() => setIsCorrect(true)}>Оформить заказ</button>
             </div>
           </div>
         </div>

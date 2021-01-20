@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import styles from './index.module.css'
-import icon from './icon.svg'
+import icon from './cartWhite.svg'
 import * as cartController from 'src/controllers/cartController'
 
 function Item({ id, image, name, price, newPrice, itemData }) {
@@ -28,7 +28,7 @@ function Item({ id, image, name, price, newPrice, itemData }) {
             {newPrice ? `${price} ₽` : null}
           </span>
         </div>
-        <div onClick={addToCart}>
+        <div className={styles.addButton} onClick={addToCart}>
           <img src={icon} />
         </div>
       </div>

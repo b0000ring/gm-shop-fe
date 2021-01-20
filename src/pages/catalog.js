@@ -14,14 +14,16 @@ const Catalog = ({ data }) => {
   return (
     <Layout> 
       <SEO title="Catalog" />
-      {groups.map(item => (
-        <div className={styles.group}>
-          <div className="content">
-            <h1>Каталог</h1>
-            <ItemsList title={groupLabels[item.name]} collection={item.items} items={data.items.edges} link={`/catalog/${item.name}`} />
+      <div className="content">
+        <h1 className={styles.title}>Каталог</h1>
+      </div>
+        {groups.map(item => (
+          <div className={styles.group}>
+            <div className="content">
+              <ItemsList title={groupLabels[item.name]} collection={item.items} items={data.items.edges} link={`/catalog/${item.name}`} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </Layout>
   )
 }
