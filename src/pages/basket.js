@@ -44,6 +44,13 @@ const Basket = () => {
     setOrderData(data)
   }
 
+  function getButton() {
+    if (typeof window === 'undefined') {
+      return null;
+    }
+    return <button disabled={getItemsCount() ? false : true} className={clsx(styles.button, getItemsCount() ? '' : styles.disabled)} onClick={() => setIsCorrect(true)}>Оформить заказ</button>
+  }
+
   function getComponent() {
     if(isSubmited) {
       return (
@@ -121,7 +128,8 @@ const Basket = () => {
             </div>
             <div className={styles.finalPrice}>
               Итого: <span>{cartController.getTotalSum()} ₽</span>
-              <button disabled={getItemsCount() === 0} className={clsx(styles.button, (getItemsCount() === 0) && styles.disabled)} onClick={() => setIsCorrect(true)}>Оформить заказ</button>
+              {console.log(getItemsCount() ? false : true)}
+              {getButton()}
             </div>
           </div>
         </div>
@@ -131,7 +139,7 @@ const Basket = () => {
 
   return (
     <Layout> 
-      <SEO title="Basket" />
+      <SEO title="Корзина" />
       <div className="content">
         {getComponent()}
       </div>

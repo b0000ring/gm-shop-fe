@@ -10,7 +10,7 @@ import Social from '../components/common/social'
 
 const Success = () => (
   <Layout> 
-    <SEO title="Success" />
+    <SEO title="Оплата не прошла" />
     <div className={clsx('content', styles.result, styles.error)}>
       <h1>Оплата не прошла</h1>
       <h3>Ваш заказ не был сформирован</h3>

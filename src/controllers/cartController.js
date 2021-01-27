@@ -17,7 +17,7 @@ export function addItem(data, count, color) {
 }
 
 export function removeItem(id) {
-  const items = this.getItems()
+  const items = getItems()
   const index = items.findIndex(item => item.data.id === id)
   items.splice(index, 1)
   localStorageController.addData(localStorageKeys.selectedItems, items)
@@ -29,7 +29,7 @@ export function  getItems() {
 }
 
 export function  getTotalSum() {
-  const items = this.getItems()
+  const items = getItems()
   return items.reduce((acc, val) => acc + (val.data.newPrice || val.data.price) * val.count, 0)
 }
 

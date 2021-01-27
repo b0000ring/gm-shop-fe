@@ -1,5 +1,6 @@
 import React, { useState  } from 'react'
 import { Link  } from 'gatsby'
+import clsx from 'clsx'
 
 import items from 'src/constants/groupLabels'
 import styles from './catalog.module.css'
@@ -31,13 +32,11 @@ function Catalog() {
         <img src={icon} />
         Каталог
       </Link>
-      {isListVisible && (
-        <div className={styles.catalogList}>
+        <div className={clsx(styles.catalogList, !isListVisible && styles.hidden)}>
           <ul>
             {getList()}
           </ul>
         </div>
-      )}
     </div>
   )
 }

@@ -47,7 +47,7 @@ const Item = ({ data }) => {
 
   return (
     <Layout> 
-      <SEO title="Item" />
+      <SEO title={itemData.name} />
       <div className="content">
         <div className={styles.main}>
           <div className={styles.photo}>

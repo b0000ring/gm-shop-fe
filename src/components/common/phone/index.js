@@ -7,7 +7,7 @@ function Phone() {
   return (
     <div className={styles.phone}>
       <img src={phoneIcon} />
-      +7 (995) 595-13-84
+      +7 (981) 994-87-85
     </div>
   )
 }

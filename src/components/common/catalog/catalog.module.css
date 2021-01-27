@@ -25,6 +25,10 @@
   z-index: 99;
 }
 
+.hidden {
+  display: none;
+}
+
 .catalogList ul {
   padding: 0;
   margin-top: 8px;

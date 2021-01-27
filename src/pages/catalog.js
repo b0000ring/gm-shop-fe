@@ -13,7 +13,7 @@ const Catalog = ({ data }) => {
   const groups = data.categories.edges[0].node.categories
   return (
     <Layout> 
-      <SEO title="Catalog" />
+      <SEO title="Каталог" />
       <div className="content">
         <h1 className={styles.title}>Каталог</h1>
       </div>

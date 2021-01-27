@@ -10,7 +10,7 @@ import Social from '../components/common/social'
 
 const About = () => (
   <Layout> 
-    <SEO title="About" />
+    <SEO title="О нас" />
     <div className={clsx('content', styles.about)}>
       <h1>О нас</h1>
       <h3>MINIBIT</h3>

@@ -10,12 +10,12 @@ import Social from '../components/common/social'
 
 const Delivery  = () => (
   <Layout> 
-    <SEO title="Delivery" />
+    <SEO title="Доставка и оплата" />
     <div className={clsx('content', styles.about)}>
       <h1>Доставка и оплата</h1>
       <h3>Оплата</h3>
       <p>
-        Оплата осуществляется с помощью сервиса CloudPayments, который предоставляет защиту ваших данных. Minibit не получает и не хранит предоставляемую Вами платежную информацию. 
+        Оплата осуществляется с помощью сервиса оплаты банка Тинькофф, который предоставляет защиту ваших данных. Minibit не получает и не хранит предоставляемую Вами платежную информацию. 
       </p>
       <h3>Доставка</h3>
       <p>
@@ -24,8 +24,7 @@ const Delivery  = () => (
       </p>
       <h3>Отслеживание</h3>
       <p>
-        Если вы заказали почтой России, то переходите по ссылке <Link href="https://www.pochta.ru/tracking" target="_blank">https://www.pochta.ru/tracking</Link><br />
-        Если вы заказали службой СДЭК, то переходите по ссылке <Link href="https://www.cdek.ru/ru/tracking" target="_blank">https://www.cdek.ru/ru/tracking</Link>
+        Если вы заказали доставку по России, то отследить отправление <br /> можно по ссылке (трэк номер будет выслан Вам после оплаты заказа) <Link href="https://www.pochta.ru/tracking" target="_blank">https://www.pochta.ru/tracking</Link><br />
       </p>
       <h3>Возврат и гарантия</h3>
       <p>

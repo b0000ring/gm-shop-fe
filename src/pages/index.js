@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
   const items = data.items.edges
   return (
     <Layout> 
-      <SEO title="Home" />
+      <SEO title="Главная" />
       <div className="content">
         <ItemsList collection={collection} items={items} title="Новые поступления" />
       </div>

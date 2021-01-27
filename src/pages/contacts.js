@@ -11,7 +11,7 @@ import mailIcon from './email.svg'
 const Contacts = () => {
 
   function onSubmit(values) {
-    const url = 'http://localhost:3000/contact'
+    const url = '/api/contact'
     const options = {
       method: 'POST',
       mode: 'cors',
@@ -26,7 +26,7 @@ const Contacts = () => {
 
   return (
     <Layout> 
-      <SEO title="Contacts" />
+      <SEO title="Контакты" />
       <div className="content">
         <div className={styles.header}>
           <h2 className={styles.title}>Контакты</h2>

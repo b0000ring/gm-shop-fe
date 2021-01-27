@@ -10,7 +10,7 @@ function ContactForm({ onSubmit }) {
   const [captchaCheckError, setCaptchaCheckError] = useState(false)
   const [captcha, setCaptcha] = useState(null)
   function getCaptcha() {
-    fetch('http://localhost:3000/captcha', {
+    fetch('/api/captcha', {
       mode: 'cors',
       credentials: 'include',
     })
@@ -26,6 +26,12 @@ function ContactForm({ onSubmit }) {
   useEffect(() => {
     getCaptcha()
   }, [])
+  
+  function getCaptchaPicture() {
+    if(typeof btoa !== 'undefined') {
+      return btoa(captcha)
+    }
+  }
 
   return (
     <div>
@@ -57,7 +63,7 @@ function ContactForm({ onSubmit }) {
 
           return errors;
           }}
-          onSubmit={(values, { setSubmitting }) => {
+          onSubmit={(values, { setSubmitting, resetForm }) => {
             //JSON.stringify(values, null, 2)
             setSubmitting(true)
             setCaptchaCheckError(false)
@@ -66,7 +72,8 @@ function ContactForm({ onSubmit }) {
               .then(data => {
                 if (data === 'error') {
                   setCaptchaCheckError(true)
-                } 
+                }
+                resetForm({})
                 setSubmitting(false)
               })
               .catch(() => {
@@ -130,7 +137,7 @@ function ContactForm({ onSubmit }) {
               </div>
               <div className={clsx(styles.formItem, styles.captcha)}>
                 <div className={clsx(styles.captchaBody, errors.captcha && touched.captcha && styles.errorWrapper)}>
-                  <img src={'data:image/svg+xml;base64,' + btoa(captcha)} />
+                  <img src={'data:image/svg+xml;base64,' + getCaptchaPicture()} />
                   <input 
                     placeholder="Капча"
                     type="text"

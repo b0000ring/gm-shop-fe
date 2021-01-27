@@ -11,7 +11,7 @@ const Group = ({ data }) => {
   const group = data.group.edges[0].node
   return (
     <Layout> 
-      <SEO title="Group" />
+      <SEO title={groupLabels[group.name]} />
       <div className="content">
         <div className={styles.header}>
           <h1>{groupLabels[group.name]}</h1>

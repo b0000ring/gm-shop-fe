@@ -7,7 +7,7 @@ import SEO from "src/components/seo"
 const Error = () => {
   return (
     <Layout> 
-      <SEO title="Error" />
+      <SEO title="Ошибка" />
       <h1>
         Ошибка
       </h1>
