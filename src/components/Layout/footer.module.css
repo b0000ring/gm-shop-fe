@@ -70,7 +70,6 @@
 }
 
 .downloads {
-  margin-right: 400px;
   flex-flow: row;
   font-size: 12px;
   font-weight: bold;

@@ -44,7 +44,7 @@ const fields = [
   },
 ]
 
-function ContactForm({ onSubmit }) {
+function ContactForm({ onSubmit, data }) {
   const [isAgree, setIsAgree] = useState(false)
   return (
     <div className={styles.wrapper}>
@@ -53,7 +53,7 @@ function ContactForm({ onSubmit }) {
         заказа. 
       </p>
       <Formik
-        initialValues={{ 
+        initialValues={Object.keys(data).length ? data : { 
           name: '',
           surname: '',
           address: '',
@@ -61,7 +61,7 @@ function ContactForm({ onSubmit }) {
           phone: '',
           email: '',
           phone: '',
-          comment: ''
+          comment: '',
         }}
         validate={values => {
           const errors = {}
@@ -121,7 +121,7 @@ function ContactForm({ onSubmit }) {
                   name="comment"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  value={values.message}
+                  value={values.comment}
                 />
                 <div className={styles.error}>
                   {errors.message && touched.message && errors.message}

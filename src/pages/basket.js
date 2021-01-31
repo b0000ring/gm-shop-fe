@@ -29,10 +29,6 @@ const Basket = () => {
     return items.map(item => <BasketItem orderInfo={item} itemData={item.data} />)
   }
 
-  function getShortItems() {
-    return items.map(item => <BasketItemShort orderInfo={item} itemData={item.data} />)
-  }
-
   function getItemsCount() {
     let total = 0
     items.forEach(item => total += item.count)
@@ -102,7 +98,7 @@ const Basket = () => {
               Оформление заказа
             </h1>
           </div>
-          <OrderForm onSubmit={submitForm} />
+          <OrderForm data={orderData} onSubmit={submitForm} />
         </div>    
       )
     }

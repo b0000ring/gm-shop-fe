@@ -12,13 +12,20 @@ import carIcon from './car.svg'
 import lampIcon from './lamp.svg'
 import locationIcon from './location.svg'
 import styles from './index.module.css'
+import banner from './banner.png'
 
 const IndexPage = ({ data }) => { 
+  console.log(data)
   const collection = data.collection.edges[0].node.value
   const items = data.items.edges
   return (
     <Layout> 
       <SEO title="Главная" />
+      <div className={styles.banner}>
+        <Link href="/catalog">
+          <img src={banner} />
+        </Link>
+      </div>
       <div className="content">
         <ItemsList collection={collection} items={items} title="Новые поступления" />
       </div>

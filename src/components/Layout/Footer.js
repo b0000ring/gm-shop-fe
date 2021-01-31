@@ -30,7 +30,7 @@ function Footer() {
         <div className="content">
           <div className={styles.vsection}>
             <div className={clsx(styles.hsection, styles.copyright)}> 
-              Copyright MINIBIT @ 2020
+              Copyright MINIBIT (И.П. Чиркин Александр Олегович) @ 2020
             </div>
             <div className={clsx(styles.hsection, styles.downloads)}>
               <Link href="/docs/terms.docx" target="_blank">

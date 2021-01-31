@@ -8,6 +8,8 @@ function Item({ data }) {
     const color = data.data.colors.find(item => item.value === data.color)
     return color.label
   }
+  const price = data.data.price
+  const newPrice = data.data.newPrice
   return (
     <div className={styles.item}>
       <div className={styles.photo}>
@@ -21,7 +23,12 @@ function Item({ data }) {
           {getColor()}
         </div>
         <div className={styles.price}>
-          {data.data.price} ₽
+          <span className={newPrice ? styles.lowPrice : ''}>
+            {newPrice || price} ₽
+          </span>
+          <span>
+            {newPrice ? `${price} ₽` : null}
+          </span>
         </div>
       </div>
     </div>

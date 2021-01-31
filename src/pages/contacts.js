@@ -11,7 +11,7 @@ import mailIcon from './email.svg'
 const Contacts = () => {
 
   function onSubmit(values) {
-    const url = '/api/contact'
+    const url = 'http://localhost:3000/contact'
     const options = {
       method: 'POST',
       mode: 'cors',

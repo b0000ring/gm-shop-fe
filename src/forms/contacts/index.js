@@ -10,7 +10,7 @@ function ContactForm({ onSubmit }) {
   const [captchaCheckError, setCaptchaCheckError] = useState(false)
   const [captcha, setCaptcha] = useState(null)
   function getCaptcha() {
-    fetch('/api/captcha', {
+    fetch('http://localhost:3000/captcha', {
       mode: 'cors',
       credentials: 'include',
     })
@@ -72,8 +72,10 @@ function ContactForm({ onSubmit }) {
               .then(data => {
                 if (data === 'error') {
                   setCaptchaCheckError(true)
+                } else {
+                  resetForm({})
+                  getCaptcha()        
                 }
-                resetForm({})
                 setSubmitting(false)
               })
               .catch(() => {

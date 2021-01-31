@@ -8,6 +8,10 @@ export function addItem(data, count, color) {
   const newItems = [...items]
   const existingItem = items.findIndex(item => item.data.id === data.id && item.color === color)
   if (existingItem !== -1) {
+    //MAX COULD BE ADDED 9 ITEMS
+    if(items[existingItem].count >= 9){
+      return
+    }
     newItems[existingItem].count = parseInt(newItems[existingItem].count, 10) + parseInt(count, 10)
   } else {
     newItems.push({ data, count, color })

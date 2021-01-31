@@ -33,6 +33,17 @@
   font-weight: bold;
 }
 
+.lowPrice {
+  color: #ed1425;
+  font-family: MontserratBold;
+}
+
+.price span:last-child {
+  margin-left: 16px;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
 .color {
   margin-bottom: 8px;
 }
