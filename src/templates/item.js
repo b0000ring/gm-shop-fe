@@ -9,6 +9,7 @@ import * as cartController from 'src/controllers/cartController'
 import Counter from 'src/components/common/counter'
 
 import styles from './item.module.css'
+import './gallery.css'
 import icon from 'src/components/common/item/icon.svg'
 
 const Item = ({ data }) => {
@@ -101,6 +102,7 @@ export const query = graphql`
           images {
             original
             thumbnail
+            mini
           }
           colors {
             label

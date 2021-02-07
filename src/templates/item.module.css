@@ -51,6 +51,10 @@
   border-radius: 3px;
 }
 
+.main :global(.fullscreen) :global(.image-gallery-slide-wrapper) {
+  margin: auto;
+}
+
 .photo :global(.image-gallery-content:not(.fullscreen)) :global(.image-gallery-slide) {
   display: flex;
   outline: none;

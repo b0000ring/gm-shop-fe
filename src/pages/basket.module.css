@@ -28,6 +28,10 @@
   font-size: 24px;
 }
 
+.deliveryType img {
+  width: 60px !important;
+}
+
 .back {
   width: 194px;
   height: 44px;

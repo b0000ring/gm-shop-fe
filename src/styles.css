@@ -24,6 +24,7 @@ body {
   font-family: 'Montserrat';
   margin: 0;
   background: white;
+  min-width: 1232px;
 }
 
 a, a:visited, a:active {

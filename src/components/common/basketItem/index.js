@@ -1,17 +1,18 @@
 import React from 'react'
+import clsx from 'clsx'
 
 import * as cartController from 'src/controllers/cartController'
 
 import icon from './cross.svg'
 import styles from './index.module.css'
 
-function BasketItem({ orderInfo, itemData }) {
+function BasketItem({ orderInfo, itemData, className }) {
   function removeItem() {
     cartController.removeItem(itemData.id)
   }
 
   return (
-    <tr className={styles.item}>
+    <tr className={clsx(styles.item, className)}>
       <td className={styles.image}>
         <img src={itemData.images[0].thumbnail}/>
       </td>

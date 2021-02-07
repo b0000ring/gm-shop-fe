@@ -1,11 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import clsx from 'clsx'
 
 import Layout from 'src/components/layout'
 import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
-import Banner from 'src/components/common/banner'
 
 import heartIcon from './heart.svg'
 import carIcon from './car.svg'
@@ -15,7 +13,6 @@ import styles from './index.module.css'
 import banner from './banner.png'
 
 const IndexPage = ({ data }) => { 
-  console.log(data)
   const collection = data.collection.edges[0].node.value
   const items = data.items.edges
   return (
@@ -38,12 +35,12 @@ const IndexPage = ({ data }) => {
         <div className={styles.about}>
           <div>
             <h2>
-              Почему МИНИБИТ?
+              Почему CYBERGEEK?
             </h2>
             <p>
-              Minibit - интернет-магазин портативной цифровой электроники и аксессуаров.
+              CYBERGEEK - интернет-магазин портативной цифровой электроники и аксессуаров.
               Мы работаем, чтобы сделать интересные и необычные устройства более доступными.
-              В магазине Minibit Вы можете приобрести редкие и интересующие Вас товары без длительного ожидания почтовой доставки из-за рубежа.<br /> 
+              В магазине CYBERGEEK Вы можете приобрести редкие и интересующие Вас товары без длительного ожидания почтовой доставки из-за рубежа.<br /> 
               Узнать подробности или задать вопросы Вы можете  по телефону или написав нам на почту. 
             </p>
             <Link href="/about">
@@ -53,7 +50,7 @@ const IndexPage = ({ data }) => {
           <div>
             <div className={styles.line}>
               <div className={styles.section}>
-                <img src={locationIcon} /> MINIBIT находится <br /> в Санкт-Петербурге
+                <img src={locationIcon} /> Мы находимся <br /> в Санкт-Петербурге
               </div>
               <div className={styles.section}>
                 <img src={heartIcon} /> Регулярные скидки <br /> и акции
@@ -84,6 +81,7 @@ export const query = graphql`
           images {
             original
             thumbnail
+            mini
           }
           colors {
             label

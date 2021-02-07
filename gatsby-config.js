@@ -1,9 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `MINIBIT`,
+    title: `CYBERGEEK`,
     description: `Магазин портативной цифровой электроники.`,
-    author: `hello@alexchirkin.me`,
+    author: `admin@cybergeek.shop`,
   },
+  proxy: [
+    {
+      prefix: "/api",
+      url: "https://cybergeek.shop",
+    },
+  ],
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

@@ -9,7 +9,6 @@ import groupLabels from 'src/constants/groupLabels'
 import styles from './catalog.module.css'
 
 const Catalog = ({ data }) => {
-  console.log(data)
   const groups = data.categories.edges[0].node.categories
   return (
     <Layout> 
@@ -38,6 +37,7 @@ export const query = graphql`
           images {
             original
             thumbnail
+            mini
           }
           colors {
             label

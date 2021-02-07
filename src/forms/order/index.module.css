@@ -48,7 +48,18 @@
   padding-top: 16px;
 }
 
-.errorWrapper input {
+.formItem select {
+  width: 514px;
+  height: 44px;
+  padding: 0 16px;
+  border: 1px solid #d9dcee;
+  border-radius: 3px;
+  font-size: 14.5px;
+  color: #2b3263;
+  font-family: MontserratBold;
+}
+
+.errorWrapper input, .errorWrapper select {
   border: 1px solid #ec2634;
 }
 

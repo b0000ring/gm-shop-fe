@@ -36,6 +36,7 @@ export const query = graphql`
           images {
             original
             thumbnail
+            mini
           }
           colors {
             label

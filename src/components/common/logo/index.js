@@ -6,8 +6,8 @@ import styles from './index.module.css'
 function Logo() {
   return (
     <Link href="/" className={styles.logo}>
-      <span className={styles.logoStart}>MINI</span>
-      <span className={styles.logoEnd}>BIT</span>
+      <span className={styles.logoStart}>CYBER</span>
+      <span className={styles.logoEnd}>GEEK</span>
     </Link>
   )
 }

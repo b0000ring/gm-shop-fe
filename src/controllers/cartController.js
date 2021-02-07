@@ -20,12 +20,19 @@ export function addItem(data, count, color) {
   callSubs()
 }
 
+export function clear() {
+  localStorageController.deleteData(localStorageKeys.selectedItems)
+  callSubs()
+}
+
 export function removeItem(id) {
   const items = getItems()
-  const index = items.findIndex(item => item.data.id === id)
-  items.splice(index, 1)
-  localStorageController.addData(localStorageKeys.selectedItems, items)
-  callSubs()
+  const index = [...items].findIndex(item => item.data.id === id)
+  if(index !== -1) {
+    items.splice(index, 1)
+    localStorageController.addData(localStorageKeys.selectedItems, items)
+    callSubs()
+  }
 }
 
 export function  getItems() {
@@ -39,11 +46,9 @@ export function  getTotalSum() {
 
 export function  subscribe(id, callback) {
   subscriptions[id] = callback
-  console.log(subscriptions)
 }
 
 function callSubs() {
-  console.log(subscriptions)
   Object.keys(subscriptions).forEach(key => {
     subscriptions[key]()
   })

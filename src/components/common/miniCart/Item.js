@@ -3,7 +3,6 @@ import React from 'react'
 import styles from './item.module.css'
 
 function Item({ data }) {
-  console.log(data)
   function getColor() {
     const color = data.data.colors.find(item => item.value === data.color)
     return color.label

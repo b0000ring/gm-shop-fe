@@ -20,7 +20,7 @@ function ItemsList({ collection, items, title, link }) {
     return selected.map(item => (
       <Item
         id={item.node.id}
-        image={item.node.images[0].original}
+        image={item.node.images[0].mini}
         name={item.node.name}
         price={item.node.price}
         newPrice={item.node.newPrice}

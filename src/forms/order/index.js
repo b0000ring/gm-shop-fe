@@ -7,18 +7,6 @@ import clsx from 'clsx'
 
 const fields = [
   {
-    label: 'Имя',
-    type: 'text',
-    key: 'name',
-    isRequired: true,
-  },
-  {
-    label: 'Фамилия',
-    type: 'text',
-    key: 'surname',
-    isRequired: true,
-  },
-  {
     label: 'Адрес доставки (Город, улица, дом, квартира)',
     type: 'text',
     key: 'address',
@@ -28,6 +16,18 @@ const fields = [
     label: 'Почтовый индекс',
     type: 'text',
     key: 'postIndex',
+    isRequired: true,
+  },
+  {
+    label: 'Имя',
+    type: 'text',
+    key: 'name',
+    isRequired: true,
+  },
+  {
+    label: 'Фамилия',
+    type: 'text',
+    key: 'surname',
     isRequired: true,
   },
   {
@@ -54,6 +54,7 @@ function ContactForm({ onSubmit, data }) {
       </p>
       <Formik
         initialValues={Object.keys(data).length ? data : { 
+          delivery: '',
           name: '',
           surname: '',
           address: '',
@@ -69,6 +70,10 @@ function ContactForm({ onSubmit, data }) {
             !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
           ) {
             errors.email = 'Некорректный E-mail адрес';
+          }
+
+          if(!values.delivery) {
+            errors.delivery = 'Выберите тип доставки';
           }
 
           fields.forEach(item => {
@@ -113,6 +118,21 @@ function ContactForm({ onSubmit, data }) {
           }
           return (
             <form className={styles.contactsForm} onSubmit={handleSubmit}>
+              <div className={clsx(styles.formItem, errors.delivery && touched.delivery && styles.errorWrapper)}>
+                <select
+                  name="delivery"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.delivery}
+                >
+                  <option value="">Выберите тип доставки</option>
+                  <option value="spb">По Санкт-Петербургу (+200 ₽)</option>
+                  <option value="rf">По России (+400 ₽)</option>
+                </select>
+                <div className={styles.error}>
+                  {errors.delivery && touched.delivery && errors.delivery}
+                </div>
+              </div>
               {getInputs()}
               <div className={styles.formItem}>
                 <textarea
