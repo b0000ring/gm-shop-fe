@@ -13,8 +13,8 @@ function Item({ id, image, name, price, newPrice, itemData }) {
 
   return (
     <div className={styles.item}>
-      <Link href={`/item/${id}`}>
-        <img src={image} className={styles.photo} />
+      <Link to={`/item/${id}`}>
+        <img src={image} className={styles.photo} alt="изображение товара" />
         <div className={styles.name}>
           {name}
         </div>
@@ -28,10 +28,18 @@ function Item({ id, image, name, price, newPrice, itemData }) {
             {newPrice ? `${price} ₽` : null}
           </span>
         </div>
-        <div className={styles.addButton} onClick={addToCart}>
-          <img src={icon} />
-        </div>
+        <button className={styles.addButton} onClick={addToCart}>
+          <img src={icon} alt="иконка корзины" />
+        </button>
       </div>
+      {newPrice ? 
+        <div className={styles.marker}>
+          SALE
+        </div>
+        :
+        null
+      }
+     
     </div>
   )
 }

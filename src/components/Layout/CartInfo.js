@@ -4,13 +4,14 @@ import { Link } from 'gatsby'
 import CartButton from 'src/components/buttons/CartButton'
 import * as cartController from 'src/controllers/cartController'
 import MiniCart from 'src/components/common/miniCart'
+import getItemsWord from "src/utils/getItemsWord"
 
 import styles from './cartInfo.module.css'
 
 const name = 'cart_info'
 
 function CartInfo() {
-  const [state, setState] = useState({})
+  const [, setState] = useState({})
   const [isShowMiniCart, setIsShowMiniCart] = useState(false)
   const items = cartController.getItems()
   
@@ -20,15 +21,15 @@ function CartInfo() {
   }, [])
 
   return (
-    <div onMouseEnter={() => setIsShowMiniCart(true)} onMouseLeave={() => setIsShowMiniCart(false)} className={styles.wrapper}>
-      <Link href="/basket" className={styles.cartInfo}> 
+    <div tabIndex={0} role="button" onMouseEnter={() => setIsShowMiniCart(true)} onMouseLeave={() => setIsShowMiniCart(false)} className={styles.wrapper}>
+      <Link to="/basket" className={styles.cartInfo}> 
         <CartButton/>
         <div>
           {cartController.getTotalSum()} ₽
         </div>
         <div>/</div>
         <div>
-          {items.length} товаров
+          {items.length} {getItemsWord(items.length)}
         </div>
       </Link>
       <div className={styles.cartMiniWrapper}>

@@ -30,7 +30,7 @@ function MiniCart() {
             {sum} ₽
           </div>
         </div>
-        <Link href="/basket">
+        <Link to="/basket">
           Корзина
         </Link>
       </div>

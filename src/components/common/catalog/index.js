@@ -11,10 +11,10 @@ function Catalog() {
   const [isListVisible, setIsListVisible] = useState(false)
   
   function getList() {
-    return Object.keys(items).map((key) => {
+    return Object.keys(items).map((key, i) => {
       return (
-        <li>
-          <Link href={`/catalog/${key}`}>
+        <li key={key}>
+          <Link to={`/catalog/${key}`}>
             {items[key]}
           </Link>
         </li>
@@ -24,12 +24,14 @@ function Catalog() {
 
   return (
     <div
+      role="button"
+      tabIndex={0}
       onMouseEnter={() => {setIsListVisible(true)}}
       className={styles.catalogWrapper}
       onMouseLeave={() => {setIsListVisible(false)}}
     >
-      <Link href="/catalog" className={styles.catalog}>
-        <img src={icon} />
+      <Link to="/catalog" className={styles.catalog}>
+        <img src={icon} alt="иконка меню" />
         Каталог
       </Link>
         <div className={clsx(styles.catalogList, !isListVisible && styles.hidden)}>

@@ -19,15 +19,15 @@ const IndexPage = ({ data }) => {
     <Layout> 
       <SEO title="Главная" />
       <div className={styles.banner}>
-        <Link href="/catalog">
-          <img src={banner} />
+        <Link to="/catalog">
+          <img src={banner} alt="баннер с распродажей" />
         </Link>
       </div>
       <div className="content">
         <ItemsList collection={collection} items={items} title="Новые поступления" />
       </div>
       <div className={styles.all}>
-        <Link href="/catalog">
+        <Link to="/catalog">
           ПОСМОТРЕТЬ ВСЕ ТОВАРЫ
         </Link>
       </div>
@@ -40,28 +40,28 @@ const IndexPage = ({ data }) => {
             <p>
               CYBERGEEK - интернет-магазин портативной цифровой электроники и аксессуаров.
               Мы работаем, чтобы сделать интересные и необычные устройства более доступными.
-              В магазине CYBERGEEK Вы можете приобрести редкие и интересующие Вас товары без длительного ожидания почтовой доставки из-за рубежа.<br /> 
+              В магазине CYBERGEEK Вы можете приобрести интересующие Вас товары без длительного ожидания почтовой доставки<br />  из-за рубежа.<br /> 
               Узнать подробности или задать вопросы Вы можете  по телефону или написав нам на почту. 
             </p>
-            <Link href="/about">
+            <Link to="/about">
               Подробнее о нас
             </Link>
           </div>
           <div>
             <div className={styles.line}>
               <div className={styles.section}>
-                <img src={locationIcon} /> Мы находимся <br /> в Санкт-Петербурге
+                <img src={locationIcon} alt="иконка локации" /> Мы находимся <br /> в Санкт-Петербурге
               </div>
               <div className={styles.section}>
-                <img src={heartIcon} /> Регулярные скидки <br /> и акции
+                <img src={heartIcon} alt="иконка скидок" /> Регулярные скидки <br /> и акции
               </div>
             </div>
             <div className={styles.line}>
               <div className={styles.section}>
-                <img src={carIcon} /> Быстрая доставка <br /> по России
+                <img src={carIcon} alt="иконка доставки" /> Быстрая доставка <br /> по России
               </div>
               <div className={styles.section}>
-               <img src={lampIcon} /> Чек и гарантия на все товары 
+               <img src={lampIcon} alt="иконка гарантий" /> Чек и гарантия на все товары 
               </div>
             </div>
           </div>

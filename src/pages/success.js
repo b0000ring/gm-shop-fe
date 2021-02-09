@@ -11,26 +11,26 @@ import * as cartController from 'src/controllers/cartController'
 const Success = () => {
   const [id, setId] = useState(null)
 
-  function getStatus() {
-    fetch('/api/status', {
-      mode: 'cors',
-      credentials: 'include',
-    })
-      .then(resp => resp.json())
-      .then((data) => {
-        if(data.isConfirmed) {
-          setId(data.id)
-          cartController.clear()
-        } else {
-          setTimeout(getStatus, 1000)
-        }
-      })
-      .catch(() => {
-        navigate('/error')
-      })
-  }
-
   useEffect(() => {
+    function getStatus() {
+      fetch('/api/status', {
+        mode: 'cors',
+        credentials: 'include',
+      })
+        .then(resp => resp.json())
+        .then((data) => {
+          if(data.isConfirmed) {
+            setId(data.id)
+            cartController.clear()
+          } else {
+            setTimeout(getStatus, 1000)
+          }
+        })
+        .catch(() => {
+          navigate('/error')
+        })
+    }
+
     getStatus()
   }, [])
 
@@ -49,7 +49,7 @@ const Success = () => {
               Как только он будет подтвержден, на указанный Вами адрес электронной почты придет письмо<br />
               с подробной информацией о доставке и статусе заказа.
             </p>
-            <Link href="/catalog">
+            <Link to="/catalog">
               Каталог товаров
             </Link>
           </>

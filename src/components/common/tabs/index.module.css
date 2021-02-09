@@ -9,7 +9,9 @@
 }
 
 .tab {
+  background-color: white;
   color: #2b3263;
+  outline: none;
   display: flex;
   justify-content: center;
   width: 220px;

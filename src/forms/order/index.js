@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
-import { Link } from 'gatsby'
 
 import styles from './index.module.css'
 import clsx from 'clsx'
@@ -61,7 +60,6 @@ function ContactForm({ onSubmit, data }) {
           postIndex: '',
           phone: '',
           email: '',
-          phone: '',
           comment: '',
         }}
         validate={values => {
@@ -149,7 +147,7 @@ function ContactForm({ onSubmit, data }) {
               </div>
               <div className={styles.agreement}>
                 <input type="checkbox" value={isAgree} onChange={() => setIsAgree(!isAgree)} />
-                Я согласен(на) с <Link href="/docs/privacy.docx"> политикой обработки персональных данных</Link>
+                Я согласен(на) с <a href="/docs/privacy.docx"> политикой обработки персональных данных</a>
               </div>
               <button className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting}>
                 Перейти к подтверждению

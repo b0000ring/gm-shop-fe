@@ -6,7 +6,6 @@ import SEO from "src/components/seo"
 import clsx from 'clsx'
 
 import styles from "./result.module.css"
-import Social from '../components/common/social'
 
 const Success = () => (
   <Layout> 
@@ -20,10 +19,10 @@ const Success = () => (
         Для этого перейдите в корзину или на страницу контактов
       </p>
       <div>
-        <Link href="/basket">
+        <Link to="/basket">
           Вернуться в корзину
         </Link>
-        <Link href="/contacts">
+        <Link to="/contacts">
           Связаться с нами
         </Link>
       </div>

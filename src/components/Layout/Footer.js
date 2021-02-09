@@ -1,6 +1,5 @@
 import React from 'react'
 import clsx from 'clsx'
-import { Link } from 'gatsby'
 
 import styles from './footer.module.css'
 import Phone from '../common/phone'
@@ -30,18 +29,18 @@ function Footer() {
         <div className="content">
           <div className={styles.vsection}>
             <div className={clsx(styles.hsection, styles.copyright)}> 
-              Copyright CYBERGEEK (И.П. Чиркин Александр Олегович) @ 2020
+              Copyright CYBERGEEK (И.П. Чиркин Александр Олегович) @ {new Date().getFullYear()}
             </div>
             <div className={clsx(styles.hsection, styles.downloads)}>
-              <Link href="/docs/terms.docx" target="_blank">
+              <a href="/docs/terms.docx" target="_blank">
                 Условия
-              </Link>
-              <Link href="/docs/privacy.docx" target="_blank">
+              </a>
+              <a href="/docs/privacy.docx" target="_blank">
                 Политика конфеденциальности
-              </Link>
+              </a>
             </div>
             <div className={clsx(styles.hsection, styles.mail)}>
-              <img src={icon} /> <Link href="mailto:contacts@cybergeek.shop">contacts@cybergeek.shop</Link>
+              <img src={icon} alt="иконка почты" /> <a href="mailto:contacts@cybergeek.shop">contacts@cybergeek.shop</a>
             </div>
           </div>
         </div>

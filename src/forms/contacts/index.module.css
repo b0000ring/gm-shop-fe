@@ -79,6 +79,7 @@
 }
 
 .captchaUpdate {
+  background: white;
   color: #ec2634;
   margin-top: 8px;
   cursor: pointer;

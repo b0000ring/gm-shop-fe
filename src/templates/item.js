@@ -53,6 +53,7 @@ const Item = ({ data }) => {
         <div className={styles.main}>
           <div className={styles.photo}>
             <ImageGallery
+              slideDuration={100}
               showPlayButton={false}
               items={itemData.images}
             />
@@ -66,7 +67,7 @@ const Item = ({ data }) => {
             </div>
             <div className={styles.config}>
               <div className={styles.color}>
-                <select value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)}>
+                <select value={selectedColor} onBlur={(e) => setSelectedColor(e.target.value)}>
                   {getColors()}
                 </select>
               </div>
@@ -80,7 +81,7 @@ const Item = ({ data }) => {
                 {itemData.newPrice ? `${itemData.price} ₽` : null}
               </span>
             </div>
-            <button className={styles.addToCart} onClick={addToCart}><img src={icon} /> В корзину</button>
+            <button className={styles.addToCart} onClick={addToCart}><img src={icon} alt="" /> В корзину</button>
           </div>
         </div>
         <div className={styles.info}>

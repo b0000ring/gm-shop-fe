@@ -12,7 +12,7 @@ function Item({ data }) {
   return (
     <div className={styles.item}>
       <div className={styles.photo}>
-        <img src={data.data.images[0].thumbnail} />
+        <img src={data.data.images[0].thumbnail} alt="изображение товара" />
       </div>
       <div className={styles.info}>
         <div className={styles.name}>

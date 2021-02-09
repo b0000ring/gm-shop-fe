@@ -15,11 +15,11 @@ const Group = ({ data }) => {
       <div className="content">
         <div className={styles.header}>
           <h1>{groupLabels[group.name]}</h1>
-          <Link href="/catalog">Вернуться в каталог</Link>
+          <Link to="/catalog">Вернуться в каталог</Link>
         </div>
         <ItemsList collection={group.value} items={data.items.edges} />
         <div className={styles.bottom}>
-          <Link href="/catalog">ПОСМОТРЕТЬ ДРУГИЕ КАТЕГОРИИ</Link>
+          <Link to="/catalog">ПОСМОТРЕТЬ ДРУГИЕ КАТЕГОРИИ</Link>
         </div>
       </div>
     </Layout>

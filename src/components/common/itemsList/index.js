@@ -19,6 +19,7 @@ function ItemsList({ collection, items, title, link }) {
 
     return selected.map(item => (
       <Item
+        key={item.node.id}
         id={item.node.id}
         image={item.node.images[0].mini}
         name={item.node.name}
@@ -33,8 +34,8 @@ function ItemsList({ collection, items, title, link }) {
       <div className={styles.title}>
         { link ? (
           <div className={styles.groupTitle}>
-            <Link href={link}>{title}</Link>
-            <Link href={link}>Посмотреть все</Link>
+            <Link to={link}>{title}</Link>
+            <Link to={link}>Посмотреть все</Link>
           </div>
         ) : title }
       </div>

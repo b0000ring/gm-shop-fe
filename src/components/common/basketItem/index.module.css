@@ -30,7 +30,9 @@
   cursor: pointer;
 }
 
-.delete div {
+.delete button {
+  background-color: white;
+  border: none !important;
   width: 30px;
   height: 30px;
   border: 1px solid #ec2634;

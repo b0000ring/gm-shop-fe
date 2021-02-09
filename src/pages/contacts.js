@@ -33,12 +33,12 @@ const Contacts = () => {
         </div>
         <div className={styles.contacts}>
           <div className={styles.info}>
-            <div className={styles.contact}><img src={phoneIcon} /> <span>+ 7 (981) 994-87-85</span></div>
-            <div className={styles.contact}><img src={mailIcon} /> <span>contacts@cybergeek.shop</span></div>
+            <div className={styles.contact}><img src={phoneIcon} alt="иконка телефона" /> <span>+ 7 (981) 994-87-85</span></div>
+            <div className={styles.contact}><img src={mailIcon} alt="иконка почты" /> <span>contacts@cybergeek.shop</span></div>
           </div>
           <ContactsForm onSubmit={onSubmit} />
           <div className={styles.text}>
-            Вы можете задать интересующий вас вопрос, заполнив форму обратной связи. Или свяжитесь 
+            Вы можете задать интересующий вас вопрос, заполнив форму обратной связи, или связаться
             с нами по телефону или электронной почте.
           </div>
         </div>

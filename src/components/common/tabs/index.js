@@ -12,9 +12,9 @@ function Tabs({ tabs }) {
       <div className={styles.tabs}>
         {tabs.map((item, i) => {
           return (
-            <div onClick={() => {setSelectedTab(i)}} className={clsx(styles.tab, (i === selectedTab) && styles.active)}>
+            <button onClick={() => {setSelectedTab(i)}} className={clsx(styles.tab, (i === selectedTab) && styles.active)}>
               {item.label}
-            </div>
+            </button>
           )
         })}
       </div>

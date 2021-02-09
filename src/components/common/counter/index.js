@@ -12,15 +12,15 @@ function Counter({ onChange, number }) {
 
   return (
     <div className={styles.counter}>
-      <div className={styles.button} onClick={() => changeCount(-1)}>
+      <button className={styles.button} onClick={() => changeCount(-1)}>
         -
-      </div>
+      </button>
       <div>
         <input disabled value={number} />
       </div>
-      <div className={styles.button} onClick={() => changeCount(+1)}>
+      <button className={styles.button} onClick={() => changeCount(+1)}>
         +
-      </div>
+      </button>
     </div>
   )
 }

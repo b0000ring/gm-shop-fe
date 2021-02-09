@@ -14,7 +14,7 @@ function BasketItem({ orderInfo, itemData, className }) {
   return (
     <tr className={clsx(styles.item, className)}>
       <td className={styles.image}>
-        <img src={itemData.images[0].thumbnail}/>
+        <img src={itemData.images[0].thumbnail} alt="изображение товара"/>
       </td>
       <td className={styles.name}>
         <div>
@@ -37,7 +37,7 @@ function BasketItem({ orderInfo, itemData, className }) {
         </div>
       </td>
       <td className={styles.delete}>
-        <div onClick={removeItem}><img src={icon} /></div>
+        <button onClick={removeItem}><img src={icon} alt="иконка удаления товара" /></button>
       </td>
     </tr>
   )

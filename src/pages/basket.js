@@ -8,12 +8,13 @@ import OrderForm from 'src/forms/order'
 import * as cartController from 'src/controllers/cartController'
 
 import styles from './basket.module.css' 
+import getItemsWord from "src/utils/getItemsWord"
 
 const name = 'basket'
 
 const Basket = () => {
   //hack to force component update
-  const [updateState, setUpdateState] = useState({})
+  const [, setUpdateState] = useState({})
   const [isCorrect, setIsCorrect] = useState(false)
   const [isSubmited, setIsSubmited] = useState(false)
   const items = cartController.getItems()
@@ -118,6 +119,8 @@ const Basket = () => {
   }
 
   function getComponent() {
+    const count = getItemsCount()
+
     if(isSubmited) {
       return (
         <div>
@@ -127,7 +130,7 @@ const Basket = () => {
           <div className={styles.checkout}>
             <div className={clsx(styles.section, styles.info)}>
               <h4>Информация для доставки</h4>
-              <div><span>Доставка:</span><span>{orderData.delivery === 'spb' ? 'По Санкт Петербургу' : 'По Росии'}</span></div>
+              <div><span>Доставка:</span><span>{orderData.delivery === 'spb' ? 'По Санкт-Петербургу' : 'По России'}</span></div>
               <div><span>Адрес:</span><span>{orderData.address}</span></div>
               <div><span>Индекс:</span><span>{orderData.postIndex}</span></div>
               <div><span>Имя:</span><span>{orderData.name}</span></div>
@@ -147,7 +150,7 @@ const Basket = () => {
                 </table>
                 <div className={styles.total}>
                   <div>
-                    {getItemsCount()} товара
+                    {getItemsCount()} {getItemsWord(count)}
                   </div>
                   <div className={styles.finalPrice}>
                     Итого: <span>{cartController.getTotalSum() + getDelveryPrice()} ₽</span>
@@ -180,7 +183,7 @@ const Basket = () => {
           <h1 className={styles.title}>
             Моя корзина
           </h1>
-          <Link href="/catalog" className={styles.back}>
+          <Link to="/catalog" className={styles.back}>
             Вернуться к покупкам
           </Link>
         </div>
@@ -192,7 +195,7 @@ const Basket = () => {
           </table>
           <div className={styles.total}>
             <div>
-              В корзине {getItemsCount()} товара
+              В корзине {count} {getItemsWord(count)}
             </div>
             <div className={styles.finalPrice}>
               Итого: <span>{cartController.getTotalSum()} ₽</span>

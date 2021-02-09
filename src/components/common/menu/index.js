@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Link } from 'gatsby'
 
 import styles from './menu.module.css'
@@ -10,7 +10,7 @@ function MenuItem({ data: {name, link} }) {
   return ( 
     <>
       <div className={`${styles.menuItem} ${isCurrent && styles.active}`}>
-        <Link href={link}>
+        <Link to={link}>
           {name}
         </Link>
       </div>
@@ -22,9 +22,9 @@ function Menu({ filter  }) {
   return (
     <menu className={styles.menu}>
       {menuConfig.filter(filter).map((item, i) => (
-        <>
+        <Fragment key={i}>
           <MenuItem key={item.name} data={item} />
-        </>
+        </Fragment>
       ))}
     </menu>
   )
