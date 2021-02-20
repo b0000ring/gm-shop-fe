@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ImageGallery from 'react-image-gallery'
 import { graphql } from "gatsby"
+import clsx from 'clsx'
 
 import Layout from 'src/components/layout'
 import SEO from 'src/components/seo'
@@ -81,7 +82,7 @@ const Item = ({ data }) => {
                 {itemData.newPrice ? `${itemData.price} ₽` : null}
               </span>
             </div>
-            <button className={styles.addToCart} onClick={addToCart}><img src={icon} alt="" /> В корзину</button>
+            <button disabled={itemData.out} className={clsx(styles.addToCart, itemData.out && styles.disabled)} onClick={addToCart}><img src={icon} alt="" /> В корзину</button>
           </div>
         </div>
         <div className={styles.info}>
@@ -112,6 +113,7 @@ export const query = graphql`
           id
           features
           name
+          out
           price
           text
         }

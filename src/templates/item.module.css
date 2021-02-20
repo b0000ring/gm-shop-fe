@@ -32,6 +32,11 @@
   margin-bottom: 16px;
 }
 
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .photo :global(.image-gallery-thumbnails-wrapper) {
   margin-right: 48px;
 }

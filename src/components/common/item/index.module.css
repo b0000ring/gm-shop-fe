@@ -93,8 +93,20 @@
   position: absolute;
   padding: 8px 16px;
   font-size: 14px;
-  color: white;
-  background-color: #ec2634;
   top: 0;
+  color: white;
   left: 0;
+}
+
+.saleMarker {
+  background-color: #ec2634;
+}
+
+.outMarker {
+  background-color: #aaafcd;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }

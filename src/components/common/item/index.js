@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import clsx from 'clsx'
 
 import styles from './index.module.css'
 import icon from './cartWhite.svg'
@@ -11,8 +12,25 @@ function Item({ id, image, name, price, newPrice, itemData }) {
     cartController.addItem(itemData, 1, itemData.colors[0].value)
   }
 
+  function getLabel() {
+    if(itemData.out) {
+      return (
+        <div className={clsx(styles.marker, styles.outMarker)}>
+          РАСПРОДАНО
+        </div>
+      )
+    }
+    if(newPrice) {
+      return (
+        <div className={clsx(styles.marker, styles.saleMarker)}>
+          СКИДКА
+        </div>
+      )
+    }
+  }
+
   return (
-    <div className={styles.item}>
+    <div className={clsx(styles.item, itemData.out && styles.disabled)}>
       <Link to={`/item/${id}`}>
         <img src={image} className={styles.photo} alt="изображение товара" />
         <div className={styles.name}>
@@ -32,14 +50,7 @@ function Item({ id, image, name, price, newPrice, itemData }) {
           <img src={icon} alt="иконка корзины" />
         </button>
       </div>
-      {newPrice ? 
-        <div className={styles.marker}>
-          SALE
-        </div>
-        :
-        null
-      }
-     
+      {getLabel()}
     </div>
   )
 }
