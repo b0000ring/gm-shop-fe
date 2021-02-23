@@ -6,7 +6,7 @@ import styles from './index.module.css'
 import icon from './cartWhite.svg'
 import * as cartController from 'src/controllers/cartController'
 
-function Item({ id, image, name, price, newPrice, itemData }) {
+function Item({ code, image, name, price, newPrice, itemData }) {
 
   function addToCart() {
     cartController.addItem(itemData, 1, itemData.colors[0].value)
@@ -31,7 +31,7 @@ function Item({ id, image, name, price, newPrice, itemData }) {
 
   return (
     <div className={clsx(styles.item, itemData.out && styles.disabled)}>
-      <Link to={`/item/${id}`}>
+      <Link to={`/item/${code}`}>
         <img src={image} className={styles.photo} alt="изображение товара" />
         <div className={styles.name}>
           {name}

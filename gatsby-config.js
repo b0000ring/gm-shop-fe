@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   siteMetadata: {
     title: `CYBERGEEK`,
@@ -51,6 +53,21 @@ module.exports = {
       },
     },
     'gatsby-plugin-root-import',
+    {
+      resolve: `gatsby-source-mongodb`,
+      options: { 
+        dbName: `cybergeek`, 
+        server: {
+          address: process.env.DB_ADDRESS,
+        },
+        auth: {
+          user: process.env.DB_USER,
+          password: process.env.DB_PASS
+        },
+        collection: [`items`, 'delivery'] 
+      },
+      query: { documents: { as_of: { $gte: 1604397088013 } } },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

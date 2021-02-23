@@ -29,7 +29,7 @@ const Catalog = ({ data }) => {
 
 export const query = graphql`
   query {
-    items: allDataJson(filter: {type: {eq: "item"}}) {
+    items: allMongodbCybergeekItems {
       edges {
         node {
           characteristics
@@ -46,6 +46,7 @@ export const query = graphql`
           id
           features
           name
+          code
           price
           out
           newPrice

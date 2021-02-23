@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-source-mongodb": "^2.10.0",
     "prettier": "2.1.1",
     "react-social-icons": "^4.1.0"
   },

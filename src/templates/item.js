@@ -14,7 +14,7 @@ import './gallery.css'
 import icon from 'src/components/common/item/icon.svg'
 
 const Item = ({ data }) => {
-  const itemData = data.allDataJson.edges[0].node
+  const itemData = data.allMongodbCybergeekItems.edges[0].node
   const [selectedColor, setSelectedColor] = useState(itemData.colors[0].value)
   const [count, setCount] = useState(1)
   const tabs = [
@@ -64,7 +64,7 @@ const Item = ({ data }) => {
               {itemData.name}
             </div>
             <div className={styles.code}>
-              Артикул {itemData.id} 
+              Артикул {itemData.code} 
             </div>
             <div className={styles.config}>
               <div className={styles.color}>
@@ -94,8 +94,8 @@ const Item = ({ data }) => {
 }
 
 export const query = graphql`
-  query($id: String!) {
-    allDataJson(filter: {id: {eq: $id}}) {
+  query($code: String!) {
+    allMongodbCybergeekItems(filter: {code: {eq: $code}}) {
       edges {
         node {
           characteristics
@@ -111,6 +111,7 @@ export const query = graphql`
             value
           }
           id
+          code
           features
           name
           out

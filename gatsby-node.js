@@ -5,21 +5,21 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const items = await graphql(`
     query {
-      allDataJson(filter: {type: {eq: "item"}}) {
+      allMongodbCybergeekItems {
         edges {
           node {
-            id
+            code
           }
         }
       }
     }
   `)
-  items.data.allDataJson.edges.forEach(({ node }) => {
+  items.data.allMongodbCybergeekItems.edges.forEach(({ node }) => {
     createPage({
-      path: `/item/${node.id}`,
+      path: `/item/${node.code}`,
       component: path.resolve(`./src/templates/item.js`),
       context: {
-        id: node.id,
+        code: node.code,
       },
     })
   })

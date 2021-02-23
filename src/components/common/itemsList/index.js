@@ -9,7 +9,7 @@ function ItemsList({ collection, items, title, link }) {
   function getItemsList() {
     const selected = collection.map(id => {
       return items.find(item => {
-        if(item.node.id === id) {
+        if(item.node.code === id) {
           return true
         }
 
@@ -17,9 +17,10 @@ function ItemsList({ collection, items, title, link }) {
       })
     })
 
-    return selected.map(item => (
+    return selected.map(item => (item &&
       <Item
         key={item.node.id}
+        code={item.node.code}
         id={item.node.id}
         image={item.node.images[0].mini}
         name={item.node.name}

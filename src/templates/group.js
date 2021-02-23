@@ -28,7 +28,7 @@ const Group = ({ data }) => {
 
 export const query = graphql`
   query($name: String!) {
-    items: allDataJson(filter: {type: {eq: "item"}}) {
+    items: allMongodbCybergeekItems {
       edges {
         node {
           characteristics
@@ -43,6 +43,7 @@ export const query = graphql`
             value
           }
           id
+          code
           features
           name
           price

@@ -18,7 +18,7 @@ function BasketItem({ orderInfo, itemData, className }) {
       </td>
       <td className={styles.name}>
         <div>
-          <span>Артикул {itemData.id}</span>
+          <span>Артикул {itemData.code}</span>
           {itemData.name}
         </div>
       </td>

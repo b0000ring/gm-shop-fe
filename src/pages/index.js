@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    items: allDataJson(filter: {type: {eq: "item"}}) {
+    items: allMongodbCybergeekItems {
       edges {
         node {
           characteristics
@@ -88,6 +88,7 @@ export const query = graphql`
             value
           }
           id
+          code
           features
           name
           price

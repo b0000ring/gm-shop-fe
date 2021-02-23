@@ -12,7 +12,8 @@ import getItemsWord from "src/utils/getItemsWord"
 
 const name = 'basket'
 
-const Basket = () => {
+const Basket = ({ data }) => {
+  const deliveryTypes = data.allMongodbCybergeekDelivery.edges
   //hack to force component update
   const [, setUpdateState] = useState({})
   const [isCorrect, setIsCorrect] = useState(false)
@@ -35,45 +36,38 @@ const Basket = () => {
     return total
   }
 
-  function getDelveryPrice() {
-    return orderData.delivery === 'spb' ? 200 : 400
+  function getOrderItems() {
+    return items.map(item => {
+      return { 
+        count: item.count,
+        color: item.color,
+        id: item.data.id
+       }
+    })
   }
 
-  function getDeliveryType() {
-    let type = null
-    if(orderData.delivery === 'spb') {
-      type = {
-        colors: [{
-          value: 'default',
-          label: ''
-        }],
-        images: [
-          {
-            thumbnail: '/images/car.svg'
-          }
-        ],
-        name: 'Доставка по СПБ',
-        price: 200,
-        id: '999999',
-      }
-    } else if(orderData.delivery === 'rf') {
-     type = {
-        name: 'Доставка по РФ',
-        colors: [{
-          value: 'default',
-          label: ''
-        }],
-        images: [
-          {
-            thumbnail: '/images/car.svg'
-          }
-        ],
-        price: 400,
-        id: '999998',
-      }
-    }
+  function getDelveryPrice() {
+    const delivery = deliveryTypes.find(item => item.node.type === orderData.delivery)
+    return delivery && parseInt(delivery.node.price, 10)
+  }
 
-    return  type && <BasketItem className={styles.deliveryType} orderInfo={{ count: 1, color: 'default' }} itemData={type} />
+  function getDelivery() {
+    let type = null
+    type = deliveryTypes.find(item => item.node.type === orderData.delivery)
+    if(!type) {
+      return
+    }
+    type.node.colors = [{
+      value: 'default',
+      label: ''
+    }]
+    type.node.images = [
+      {
+        thumbnail: '/images/car.svg'
+      }
+    ]
+
+    return <BasketItem className={styles.deliveryType} orderInfo={{ count: 1, color: 'default' }} itemData={type.node} />
   }
 
   function submitForm(data) {
@@ -100,9 +94,8 @@ const Basket = () => {
       body: JSON.stringify({
         data: {
           ...orderData,
-          deliveryPrice: getDelveryPrice()
         },
-        items
+        items: getOrderItems()
       })
     }
 
@@ -145,7 +138,7 @@ const Basket = () => {
                 <table className={styles.table}>
                   <tbody>
                     {getItems()}
-                    {getDeliveryType()}
+                    {getDelivery()}
                   </tbody>
                 </table>
                 <div className={styles.total}>
@@ -216,5 +209,19 @@ const Basket = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query {
+    allMongodbCybergeekDelivery {
+      edges {
+        node {
+          type
+          name
+          price
+        }
+      }
+    }
+  }
+`
 
 export default Basket
