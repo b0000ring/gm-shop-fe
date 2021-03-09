@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Formik } from 'formik'
+import clsx from 'clsx'
+
+import Button from 'src/components/buttons/Button'
 
 import styles from './index.module.css'
-import clsx from 'clsx'
 
 const fields = [
   {
@@ -149,9 +151,9 @@ function ContactForm({ onSubmit, data }) {
                 <input type="checkbox" value={isAgree} onChange={() => setIsAgree(!isAgree)} />
                 Я согласен(на) с <a href="/docs/privacy.docx"> политикой обработки персональных данных</a>
               </div>
-              <button className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting}>
+              <Button reverse className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting}>
                 Перейти к подтверждению
-              </button>
+              </Button>
             </form>
           )
         }}

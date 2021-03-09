@@ -17,22 +17,8 @@
   line-height: 1.63;
 }
 
-.about a {
+.aboutButton {
   margin-top: 48px;
-  width: 169px;
-  height: 44px;
-  border: 2px solid #ec2634;
-  color: #ec2634;
-  border-radius: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-}
-
-.about a:hover {
-  color: white;
-  background-color: #ec2634;
 }
 
 .line {
@@ -48,17 +34,6 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 56px;
-}
-
-.all a {
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 55px;
-  background-color: #ec2634;
-  font-size: 15.5px;
 }
 
 .line:first-child {

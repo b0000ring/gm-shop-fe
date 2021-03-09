@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react"
 import clsx from 'clsx'
 import { navigate, Link } from 'gatsby'
+
 import Layout from "src/components/layout"
 import SEO from "src/components/seo"
 import BasketItem from 'src/components/common/basketItem'
 import OrderForm from 'src/forms/order'
 import * as cartController from 'src/controllers/cartController'
+import Button from 'src/components/buttons/Button'
 
 import styles from './basket.module.css' 
 import getItemsWord from "src/utils/getItemsWord"
@@ -79,7 +81,7 @@ const Basket = ({ data }) => {
     if (typeof window === 'undefined') {
       return null;
     }
-    return <button disabled={getItemsCount() ? false : true} className={clsx(styles.button, getItemsCount() ? '' : styles.disabled)} onClick={() => setIsCorrect(true)}>Оформить заказ</button>
+    return <Button reverse disabled={getItemsCount() ? false : true} className={clsx(styles.button, getItemsCount() ? '' : styles.disabled)} onClick={() => setIsCorrect(true)}>Оформить заказ</Button>
   }
 
   function onPayClick() {
@@ -153,8 +155,8 @@ const Basket = ({ data }) => {
             </div>
           </div>
           <div className={styles.buttonWrapper}>
-            <button className={clsx(styles.buttonReverse)} onClick={() => setIsSubmited(false)}>Изменить данные</button>
-            <button className={styles.button} onClick={() => onPayClick()}>Оплатить</button>
+            <Button className={clsx(styles.buttonReverse)} onClick={() => setIsSubmited(false)}>Изменить данные</Button>
+            <Button reverse className={styles.button} onClick={() => onPayClick()}>Оплатить</Button>
           </div>
         </div>
       )
@@ -177,7 +179,7 @@ const Basket = ({ data }) => {
             Моя корзина
           </h1>
           <Link to="/catalog" className={styles.back}>
-            Вернуться к покупкам
+            <Button>Вернуться к покупкам</Button>
           </Link>
         </div>
         <div className={styles.tableWrapper}>

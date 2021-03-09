@@ -3,6 +3,7 @@ import { navigate } from 'gatsby'
 import { Formik } from 'formik'
 import clsx from 'clsx'
 
+import Button from 'src/components/buttons/Button'
 import styles from './index.module.css'
 
 function ContactForm({ onSubmit }) {
@@ -156,9 +157,9 @@ function ContactForm({ onSubmit }) {
                 </div>
                 <button type="button" onClick={getCaptcha} className={styles.captchaUpdate}>Обновить</button>
               </div>
-              <button className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting || !isAgree}>
+              <Button reverse className={clsx(styles.submitButton, !isAgree && styles.disabled)} type="submit" disabled={isSubmitting || !isAgree}>
                 Отправить
-              </button>
+              </Button>
             </div>
           </form>
         )}

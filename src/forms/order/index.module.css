@@ -72,20 +72,6 @@
   opacity: 0.8;
 }
 
-.submitButton {
-  color: white;
-  font-size: 17.5px;
-  background-color: #ec2634;
-  border: 1px solid #ec2634;
-  border-radius: 3px;
-  padding: 16px 24px;
-}
-
-.submitButton:hover {
-  color: #ec2634;
-  background-color: white;
-}
-
 .agreement {
   font-family: MontserratBold;
   color: #31386c;

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import * as cartController from 'src/controllers/cartController'
+import Button from 'src/components/buttons/button'
+
 import Item from './Item'
 import styles from './index.module.css'
 
@@ -31,7 +33,9 @@ function MiniCart() {
           </div>
         </div>
         <Link to="/basket">
-          Корзина
+          <Button reverse className={styles.toCartButton}>
+            Корзина
+          </Button>
         </Link>
       </div>
     </div>

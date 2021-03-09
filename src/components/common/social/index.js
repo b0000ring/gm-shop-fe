@@ -8,8 +8,7 @@ function Social() {
     <div className={styles.icons}>
       <SocialIcon target="_blank" url="https://vk.com/cybergeekshop" />
       <SocialIcon target="_blank" url="https://instagram.com/cybergeek.shop" />
-      {/*<SocialIcon url="http://twitter.com" />
-      <SocialIcon url="http://youtube.com" />*/}
+      <SocialIcon target="_blank" url="https://www.youtube.com/channel/UC_Ett5Cqo2HsUczrJkcwDww" />
     </div>
   )
 }

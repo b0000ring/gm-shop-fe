@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
 import Layout from "src/components/layout"
 import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
 import groupLabels from 'src/constants/groupLabels'
+import Button from 'src/components/buttons/Button'
 
 import styles from './group.module.css'
 
@@ -15,11 +17,15 @@ const Group = ({ data }) => {
       <div className="content">
         <div className={styles.header}>
           <h1>{groupLabels[group.name]}</h1>
-          <Link to="/catalog">Вернуться в каталог</Link>
+          <Link to="/catalog">
+            <Button>Вернуться в каталог</Button>
+          </Link>
         </div>
         <ItemsList collection={group.value} items={data.items.edges} />
         <div className={styles.bottom}>
-          <Link to="/catalog">ПОСМОТРЕТЬ ДРУГИЕ КАТЕГОРИИ</Link>
+          <Link to="/catalog">
+            <Button reverse>ПОСМОТРЕТЬ ДРУГИЕ КАТЕГОРИИ</Button>
+          </Link>
         </div>
       </div>
     </Layout>

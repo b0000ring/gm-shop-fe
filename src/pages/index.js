@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from 'src/components/layout'
 import SEO from "src/components/seo"
 import ItemsList from 'src/components/common/itemsList'
+import Button from 'src/components/buttons/Button'
 
 import heartIcon from './heart.svg'
 import carIcon from './car.svg'
@@ -28,7 +29,7 @@ const IndexPage = ({ data }) => {
       </div>
       <div className={styles.all}>
         <Link to="/catalog">
-          ПОСМОТРЕТЬ ВСЕ ТОВАРЫ
+          <Button reverse>ПОСМОТРЕТЬ ВСЕ ТОВАРЫ</Button>
         </Link>
       </div>
       <div className="content">
@@ -44,7 +45,7 @@ const IndexPage = ({ data }) => {
               Узнать подробности или задать вопросы Вы можете  по телефону или написав нам на почту. 
             </p>
             <Link to="/about">
-              Подробнее о нас
+              <Button className={styles.aboutButton}>Подробнее о нас</Button>
             </Link>
           </div>
           <div>

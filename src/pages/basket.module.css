@@ -32,24 +32,6 @@
   width: 60px !important;
 }
 
-.back {
-  width: 194px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #ec2634;
-  border-radius: 3px;
-  color: #ec2634 !important;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.back:hover {
-  background-color: #ec2634;
-  color: white !important;
-}
-
 .table thead td {
   padding: 0px 24px 24px 24px;
 }
@@ -85,6 +67,8 @@
 }
 
 .finalPrice {
+  display: flex;
+  align-items: center;
   font-size: 18px;
   font-weight: normal;
 }
@@ -97,37 +81,12 @@
 }
 
 .button {
-  color: white;
-  font-size: 17.5px;
-  background-color: #ec2634;
-  border: 1px solid #ec2634;
-  border-radius: 3px;
-  padding: 16px 24px;
   margin-left: 72px;
-}
-
-.button:hover {
-  color: #ec2634;
-  background-color: white;
-}
-
-.buttonReverse {
-  font-size: 17.5px;
-  border-radius: 3px;
-  padding: 16px 24px;
-  color: #ec2634;
-  background-color: white;
-  border: 1px solid #ec2634;
 }
 
 .disabled {
   opacity: 0.5;
   pointer-events: none;
-}
-
-.buttonReverse:hover {
-  color: white;
-  background-color: #ec2634;
 }
 
 .checkout {

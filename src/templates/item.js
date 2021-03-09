@@ -8,6 +8,7 @@ import SEO from 'src/components/seo'
 import Tabs from 'src/components/common/tabs'
 import * as cartController from 'src/controllers/cartController'
 import Counter from 'src/components/common/counter'
+import Button from 'src/components/buttons/Button'
 
 import styles from './item.module.css'
 import './gallery.css'
@@ -45,7 +46,6 @@ const Item = ({ data }) => {
   }
 
   function addToCart() {
-    ym && ym(72959503,'reachGoal','basket_full')
     cartController.addItem(itemData, count, selectedColor)
   }
 
@@ -85,7 +85,14 @@ const Item = ({ data }) => {
                 {itemData.newPrice ? `${itemData.price} ₽` : null}
               </span>
             </div>
-            <button disabled={itemData.out} className={clsx(styles.addToCart, itemData.out && styles.disabled)} onClick={addToCart}><img src={icon} alt="" /> В корзину</button>
+            <Button
+              reverse
+              disabled={itemData.out}
+              className={clsx(styles.addToCart, itemData.out && styles.disabled)}
+              onClick={addToCart}
+            >
+              <img src={icon} alt="" /> В корзину
+            </Button>
           </div>
         </div>
         <div className={styles.info}>

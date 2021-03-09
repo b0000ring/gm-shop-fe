@@ -12,39 +12,10 @@
   font-family: MontserratBold;
 }
 
-.header a:last-child {
-  width: 194px;
-  height: 44px;
+.bottom {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #ec2634;
-  border-radius: 3px;
-  color: #ec2634;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.header a:last-child:hover {
-  background-color: #ec2634;
-  color: white;
-}
-
-.bottom {
   width: 100%;
   margin-top: 48px;
-}
-
-.bottom a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 360px;
-  font-weight: bold;
-  height: 55px;
-  background-color: #ec2634;
-  border: 1px solid #ec2634;
-  color: white;
-  font-size: 15.5px;
-  margin: 0 auto;
 }

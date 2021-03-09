@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Item from 'src/components/common/item'
+import Button from 'src/components/buttons/Button'
 
 import styles from './index.module.css'
 
@@ -36,7 +37,9 @@ function ItemsList({ collection, items, title, link }) {
         { link ? (
           <div className={styles.groupTitle}>
             <Link to={link}>{title}</Link>
-            <Link to={link}>Посмотреть все</Link>
+            <Link to={link}>
+              <Button className={styles.allButton}>Посмотреть все</Button>
+            </Link>
           </div>
         ) : title }
       </div>

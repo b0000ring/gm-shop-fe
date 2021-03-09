@@ -1,0 +1,28 @@
+.button {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  background: white;
+  padding: 12px 16px;
+  border: 2px solid #ec2634;
+  color: #ec2634;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.button:hover {
+  color: white;
+  background-color: #ec2634;
+}
+
+.reverse {
+  color: white;
+  background-color: #ec2634;
+}
+
+.reverse:hover {
+  color: #ec2634;
+  background-color: white;
+}

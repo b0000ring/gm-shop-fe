@@ -9,7 +9,6 @@ import * as cartController from 'src/controllers/cartController'
 function Item({ code, image, name, price, newPrice, itemData }) {
 
   function addToCart() {
-    ym && ym(72959503,'reachGoal','basket_short')
     cartController.addItem(itemData, 1, itemData.colors[0].value)
   }
 

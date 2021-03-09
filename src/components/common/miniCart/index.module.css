@@ -24,21 +24,8 @@
   color: white;
 }
 
-.bottom a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 107px;
-  height: 44px;
-  font-size: 14.5px;
-  color: white;
-  border: 1px solid white;
-  border-radius: 3px;
-}
-
-.bottom a:hover {
-  background-color: white;
-  color: #ec2634;
+.toCartButton {
+  border-color: white !important;
 }
 
 .info div:first-child {
