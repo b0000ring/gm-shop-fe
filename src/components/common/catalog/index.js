@@ -13,11 +13,11 @@ function Catalog() {
   function getList() {
     return Object.keys(items).map((key, i) => {
       return (
-        <li key={key}>
-          <Link to={`/catalog/${key}`}>
+        <Link to={`/catalog/${key}`}>
+          <li key={key}>
             {items[key]}
-          </Link>
-        </li>
+          </li>
+        </Link>
       )
     }) 
   }

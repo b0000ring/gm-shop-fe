@@ -41,7 +41,7 @@ const Basket = ({ data }) => {
       return { 
         count: item.count,
         color: item.color,
-        id: item.data.id
+        code: item.data.code
        }
     })
   }

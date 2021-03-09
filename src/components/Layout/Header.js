@@ -17,7 +17,7 @@ function Header() {
           <Logo />
           <Phone />
           <div className={styles.workingHours}>
-            Пн-Вс с 09:00 до 21:00
+            Пн-Вс с 16:00 до 22:00
           </div>
         </div>
         <div className={styles.headerSection}>

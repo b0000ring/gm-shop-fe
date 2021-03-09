@@ -2,9 +2,10 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: `CYBERGEEK`,
+    title: `CYBERGEEK - приставки, кпк, электроника, аксессуары`,
     description: `Магазин портативной цифровой электроники.`,
     author: `admin@cybergeek.shop`,
+    siteUrl: `https://cybergeek.shop`,
   },
   proxy: [
     {
@@ -52,6 +53,7 @@ module.exports = {
         path: `./data/`,
       },
     },
+    `gatsby-plugin-sitemap`,
     'gatsby-plugin-root-import',
     {
       resolve: `gatsby-source-mongodb`,

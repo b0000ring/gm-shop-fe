@@ -15,7 +15,9 @@ import icon from 'src/components/common/item/icon.svg'
 
 const Item = ({ data }) => {
   const itemData = data.allMongodbCybergeekItems.edges[0].node
+  console.log(itemData)
   const [selectedColor, setSelectedColor] = useState(itemData.colors[0].value)
+  console.log(selectedColor)
   const [count, setCount] = useState(1)
   const tabs = [
     {
@@ -43,13 +45,14 @@ const Item = ({ data }) => {
   }
 
   function addToCart() {
+    ym && ym(72959503,'reachGoal','basket_full')
     cartController.addItem(itemData, count, selectedColor)
   }
 
 
   return (
     <Layout> 
-      <SEO title={itemData.name} />
+      <SEO title={`Купить ${itemData.name}`} />
       <div className="content">
         <div className={styles.main}>
           <div className={styles.photo}>
@@ -68,7 +71,7 @@ const Item = ({ data }) => {
             </div>
             <div className={styles.config}>
               <div className={styles.color}>
-                <select value={selectedColor} onBlur={(e) => setSelectedColor(e.target.value)}>
+                <select value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)}>
                   {getColors()}
                 </select>
               </div>
