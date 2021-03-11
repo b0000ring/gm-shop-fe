@@ -1,9 +1,11 @@
 import React from 'react'
+import { ToastContainer } from 'react-toastify';
 
 import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 import indexStyles from './index.module.css'
+import 'react-toastify/dist/ReactToastify.css';
 
 function Layout({ children }) {
   return (
@@ -13,6 +15,7 @@ function Layout({ children }) {
         {children}
       </Main>
       <Footer/>
+      <ToastContainer hideProgressBar />
     </div>
   )
 }

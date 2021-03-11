@@ -40,12 +40,13 @@
 }
 
 .catalogList li {
-  padding: 16px 32px;
+  display: flex;
   border-bottom: 1px solid #e3e5f3;
   font-weight: bold;
   font-size: 15px;
   border-left: 4px solid transparent;
 }
+
 
 .catalogList li:before {
   display: none;
@@ -62,4 +63,10 @@
 
 .catalogList li:last-child {
   border-bottom: none;
+}
+
+
+.catalogList li a {
+  flex: 1;
+  padding: 16px 32px;
 }

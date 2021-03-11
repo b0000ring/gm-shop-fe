@@ -16,9 +16,7 @@ import icon from 'src/components/common/item/icon.svg'
 
 const Item = ({ data }) => {
   const itemData = data.allMongodbCybergeekItems.edges[0].node
-  console.log(itemData)
   const [selectedColor, setSelectedColor] = useState(itemData.colors[0].value)
-  console.log(selectedColor)
   const [count, setCount] = useState(1)
   const tabs = [
     {

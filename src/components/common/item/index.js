@@ -30,7 +30,7 @@ function Item({ code, image, name, price, newPrice, itemData }) {
   }
 
   return (
-    <div className={clsx(styles.item, itemData.out && styles.disabled)}>
+    <li className={clsx(styles.item, itemData.out && styles.disabled)}>
       <Link to={`/item/${code}`}>
         <img src={image} className={styles.photo} alt="изображение товара" />
         <div className={styles.name}>
@@ -51,7 +51,7 @@ function Item({ code, image, name, price, newPrice, itemData }) {
         </button>
       </div>
       {getLabel()}
-    </div>
+    </li>
   )
 }
 

@@ -43,9 +43,9 @@ function ItemsList({ collection, items, title, link }) {
           </div>
         ) : title }
       </div>
-      <div className={styles.list}>
+      <ul className={styles.list}>
        {getItemsList()}
-      </div>
+      </ul>
     </div>
   )
 }

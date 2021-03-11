@@ -1,23 +1,26 @@
-import localStorageController from './localStorageController'
+import { toast } from 'react-toastify'
+
+import * as localStorageController from './localStorageController'
 import localStorageKeys from 'src/constants/localStorageKeys'
 
 const subscriptions = {}
+const MAX_ITEMS = 9
 
 export function addItem(data, count, color) {
   const items = getItems()
-  const newItems = [...items]
   const existingItem = items.findIndex(item => item.data.id === data.id && item.color === color)
   if (existingItem !== -1) {
-    //MAX COULD BE ADDED 9 ITEMS
-    if(items[existingItem].count + count > 9){
+    if(items[existingItem].count + count > MAX_ITEMS){
+      toast.error('Товар не добавлен! Превышено максимальное число для этого товара.')
       return
     }
-    newItems[existingItem].count = parseInt(newItems[existingItem].count, 10) + parseInt(count, 10)
+    items[existingItem].count = parseInt(items[existingItem].count, 10) + parseInt(count, 10)
   } else {
-    newItems.push({ data, count, color })
+    items.push({ data, count, color })
   }
-  localStorageController.addData(localStorageKeys.selectedItems, newItems)
+  localStorageController.addData(localStorageKeys.selectedItems, items)
   callSubs()
+  toast.success('Товар добавлен в корзину!')
 }
 
 export function clear() {
