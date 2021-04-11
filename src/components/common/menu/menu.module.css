@@ -16,6 +16,6 @@
   margin-right: 0;
 }
 
-.active  a{
-  color: #ec2634;
+.active{
+  color: #ec2634 !important;
 }

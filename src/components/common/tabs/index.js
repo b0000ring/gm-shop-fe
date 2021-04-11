@@ -18,9 +18,9 @@ function Tabs({ tabs }) {
           )
         })}
       </div>
-      <div className={styles.content}>
+      <section className={styles.content}>
         {tabs[selectedTab].content}
-      </div>
+      </section>
     </div>
     
   )

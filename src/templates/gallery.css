@@ -105,6 +105,7 @@
       transform: translateY(-50%); }
 
 .image-gallery-content {
+  align-items: flex-start;
   position: relative;
   line-height: 0;
   top: 0; }

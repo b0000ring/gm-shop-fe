@@ -51,7 +51,7 @@ const Item = ({ data }) => {
   return (
     <Layout> 
       <SEO title={`Купить ${itemData.name}`} />
-      <div className="content">
+      <article className="content">
         <div className={styles.main}>
           <div className={styles.photo}>
             <ImageGallery
@@ -61,9 +61,9 @@ const Item = ({ data }) => {
             />
           </div>
           <div className={styles.interactive}>
-            <div className={styles.name}>
+            <h1 className={styles.name}>
               {itemData.name}
-            </div>
+            </h1>
             <div className={styles.code}>
               Артикул {itemData.code} 
             </div>
@@ -96,7 +96,7 @@ const Item = ({ data }) => {
         <div className={styles.info}>
           <Tabs tabs={tabs}/>
         </div>        
-      </div>
+      </article>
     </Layout>
   )
 }

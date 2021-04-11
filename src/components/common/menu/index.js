@@ -8,25 +8,21 @@ function MenuItem({ data: {name, link} }) {
   
   const isCurrent = typeof window !== `undefined` && window.location.pathname === link;
   return ( 
-    <>
-      <div className={`${styles.menuItem} ${isCurrent && styles.active}`}>
-        <Link to={link}>
-          {name}
-        </Link>
-      </div>
-    </>
+    <Link className={`${styles.menuItem} ${isCurrent && styles.active}`} to={link}>
+      {name}
+    </Link>
   )
 }
 
 function Menu({ filter  }) {
   return (
-    <menu className={styles.menu}>
+    <nav className={styles.menu}>
       {menuConfig.filter(filter).map((item, i) => (
         <Fragment key={i}>
           <MenuItem key={item.name} data={item} />
         </Fragment>
       ))}
-    </menu>
+    </nav>
   )
 }
 
