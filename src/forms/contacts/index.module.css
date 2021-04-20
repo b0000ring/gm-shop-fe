@@ -119,3 +119,37 @@
   opacity: 0.5;
   pointer-events: none;
 }
+
+:global(.gl-mobile) .contactsForm button {
+  margin: auto;
+}
+
+:global(.gl-mobile) .title {
+  text-align: center;
+}
+
+:global(.gl-mobile) .formItem input, :global(.gl-mobile) .formItem textarea {
+  width: 90%;
+}
+
+:global(.gl-mobile) .agreement {
+  align-items: flex-start;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+:global(.gl-mobile) .agreement input {
+  width: 40px;
+  height: 23px;
+  margin-left: 16px;
+}
+
+:global(.gl-mobile) .agreement a {
+  white-space: initial;
+  margin-left: 8px;
+}
+
+:global(.gl-mobile) .captchaUpdate {
+  font-size: 16px;
+  margin-left: 1px !important;
+}

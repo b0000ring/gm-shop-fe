@@ -5,5 +5,10 @@
   flex-direction: column;
   justify-content: flex-start;
   box-sizing: border-box;
+  min-width: 1232px;
 }
 
+:global(.gl-mobile) {
+  min-width: 100%;
+  max-width: 100%;
+}

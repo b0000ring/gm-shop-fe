@@ -36,3 +36,19 @@
   align-items: center;
   flex-wrap: wrap;
 }
+
+:global(.gl-mobile) .title {
+  text-align: center;
+}
+
+:global(.gl-mobile) .list {
+  flex-direction: column;
+}
+
+:global(.gl-mobile) .groupTitle {
+  justify-content: center;
+}
+
+:global(.gl-mobile) .groupTitle a:last-child {
+  display: none;
+}

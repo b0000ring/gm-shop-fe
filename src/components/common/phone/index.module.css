@@ -13,3 +13,7 @@
   width: 14px;
   margin-right: 16px;
 }
+
+:global(.gl-mobile) .phone {
+  margin-right: 0;
+}

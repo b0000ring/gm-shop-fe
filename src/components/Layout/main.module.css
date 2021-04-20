@@ -5,3 +5,7 @@
   flex-flow: column;
   min-height: calc(100vh - 380px);
 }
+
+:global(.gl-mobile) .main {
+  margin-top: 130px;
+}

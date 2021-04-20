@@ -178,3 +178,54 @@
   margin-right: 8px;
   margin-left: -8px;
 }
+
+:global(.gl-mobile) .interactive {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 0;
+}
+
+:global(.gl-mobile) .main {
+  flex-direction: column;
+}
+
+
+:global(.gl-mobile) .config {
+  width: 100%;
+  flex-direction: column;
+  margin-top: 48px;
+}
+
+:global(.gl-mobile) .config select {
+  margin-bottom: 32px;
+  margin-right: 0;
+}
+
+:global(.gl-mobile) :global(.image-gallery-thumbnails-wrapper) {
+  display: none;
+}
+
+:global(.gl-mobile) .photo {
+  margin-bottom: 64px;
+  margin-right: 0;
+}
+
+:global(.gl-mobile) .photo :global(.image-gallery-fullscreen-button) {
+  display: none;
+}
+
+:global(.gl-mobile) :global(.image-gallery-swipe) :global(.image-gallery-slides) :global(.image-gallery-image) {
+  width: 90% !important;
+}
+
+:global(.gl-mobile) :global(.image-gallery-swipe) :global(.image-gallery-slides) :global(.image-gallery-slide) {
+  width: 100%;
+  height: 300px;
+}
+
+:global(.gl-mobile) .info > div > div {
+  overflow-x: auto;
+} 

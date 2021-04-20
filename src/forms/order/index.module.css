@@ -91,3 +91,39 @@
   opacity: 0.5;
   pointer-events: none;
 }
+
+
+:global(.gl-mobile) .wrapper {
+  flex-direction: column;
+}
+
+:global(.gl-mobile) .formItem {
+  width: 100%;
+}
+
+:global(.gl-mobile) .formItem input, :global(.gl-mobile) .formItem textarea, :global(.gl-mobile) .formItem select {
+  width: 90%;
+  box-sizing: content-box;
+}
+
+:global(.gl-mobile) .agreement {
+  align-items: flex-start;
+  display: flex;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+:global(.gl-mobile) .agreement input {
+  width: 40px;
+  height: 23px;
+  margin-left: 16px;
+}
+
+:global(.gl-mobile) .agreement a {
+  white-space: initial;
+  margin-left: 8px;
+}
+
+:global(.gl-mobile) .wrapper button {
+  margin: auto;
+}

@@ -24,6 +24,7 @@
   padding: 0 24px;
   cursor: pointer;
   user-select: none;
+  background-color: inherit;
 }
 
 .button:hover, .counter input {

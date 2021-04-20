@@ -12,3 +12,7 @@
   color: #ec2634;
 }
 
+:global(.gl-mobile) .logo {
+  font-size: 18px;
+  margin-right: 0;
+}

@@ -200,3 +200,67 @@
 .miniTableWrapper .finalPrice span {
   font-size: 24px;
 }
+
+:global(.gl-mobile) .title {
+  text-align: center;
+}
+
+:global(.gl-mobile) .header {
+  justify-content: center;
+}
+
+:global(.gl-mobile) .header a {
+  display: none;
+}
+
+:global(.gl-mobile) .tableWrapper {
+  padding: 0;
+}
+
+:global(.gl-mobile) .total {
+  margin: 32px 0;
+  padding: 0 16px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+:global(.gl-mobile) .finalPrice {
+  justify-content: space-between;
+  width: 100%;
+}
+
+:global(.gl-mobile) .finalPrice button {
+  margin-left: 0;
+  width: 140px;
+}
+
+:global(.gl-mobile) .finalPrice span {
+  font-size: 20px;
+  margin-left: 0;
+}
+
+:global(.gl-mobile) .total > div:first-child {
+  margin-left: 0;
+  margin-bottom: 32px;
+}
+
+:global(.gl-mobile) .checkout {
+  flex-direction: column;
+}
+
+:global(.gl-mobile) .checkout h4 {
+  text-align: center;
+}
+
+:global(.gl-mobile) .info div {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+:global(.gl-mobile) .section {
+  width: 100%;
+}
+
+:global(.gl-mobile) .miniTableWrapper {
+  width: 100%;
+}

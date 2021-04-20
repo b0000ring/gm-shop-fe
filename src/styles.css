@@ -20,11 +20,17 @@
   max-width: 1200px;
 }
 
+.gl-mobile .content {
+  min-width: 100%;
+  max-width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Montserrat';
   margin: 0;
   background: white;
-  min-width: 1232px;
 }
 
 a, a:visited, a:active {

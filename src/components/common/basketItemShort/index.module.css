@@ -19,3 +19,12 @@
   display: flex;
   justify-content: space-around;
 }
+
+:global(.gl-mobile) .item {
+  height: inherit;
+  display: grid;
+  grid-template-columns: 30% 33%;
+  grid-template-rows: 60px 60px;
+  column-gap: 10px;
+  row-gap: 15px;
+}

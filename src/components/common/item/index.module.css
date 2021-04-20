@@ -114,3 +114,12 @@
   pointer-events: none;
   opacity: 0.5;
 }
+
+:global(.gl-mobile) .item {
+  max-width: 300px;
+  margin: 16px 0 !important;
+}
+
+:global(.gl-mobile) .item img {
+  width: 300px;
+}

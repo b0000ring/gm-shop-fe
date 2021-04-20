@@ -66,3 +66,20 @@
   font-family: Montserrat;
   text-decoration: line-through;
 }
+
+
+:global(.gl-mobile) .item {
+  height: inherit;
+  display: grid;
+  grid-template-columns: 30% 33% 30%;
+  grid-template-rows: 100px 100px;
+  column-gap: 10px;
+  row-gap: 15px;
+}
+
+:global(.gl-mobile) .item td, :global(.gl-mobile) .item td div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}

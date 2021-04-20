@@ -94,3 +94,21 @@
   margin-top: 2px;
   margin-right: 16px;
 }
+
+:global(.gl-mobile) .footer > div:first-child {
+  display: none;
+}
+
+:global(.gl-mobile) .footer > div:last-child .vsection {
+  padding-top: 0;
+  flex-direction: column-reverse;
+}
+
+:global(.gl-mobile) .footer > div:last-child .vsection .hsection {
+  text-align: center;
+  margin: 8px 0;
+}
+
+:global(.gl-mobile) .copyright {
+  font-size: 10px;
+}

@@ -48,3 +48,15 @@
   color: #2b3263;
   font-weight: bold;
 }
+
+:global(.gl-mobile) .header {
+  justify-content: center;
+}
+
+:global(.gl-mobile) .contacts {
+  flex-direction: column-reverse;
+}
+
+:global(.gl-mobile) .text {
+  display: none;
+}

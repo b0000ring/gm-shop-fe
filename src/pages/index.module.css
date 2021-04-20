@@ -83,3 +83,34 @@
   border-radius: 3px;
   border: 1px solid #d9dcee;
 }
+
+:global(.gl-mobile) .banner {
+  display: none;
+}
+
+:global(.gl-mobile) .about {
+  flex-direction: column;
+}
+
+:global(.gl-mobile) .about h2 {
+  text-align: center;
+}
+
+:global(.gl-mobile) .about > div {
+  width: 100%;
+}
+
+:global(.gl-mobile) .line {
+  border: none;
+  flex-direction: column;
+}
+
+:global(.gl-mobile) .section {
+  width: 100%;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid #d9dcee;;
+  padding-bottom: 16px !important;
+  padding-top: 16px !important;
+}
+

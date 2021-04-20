@@ -29,3 +29,11 @@
   width: 48px !important;
   height: 48px !important;
 }
+
+:global(.gl-mobile) .about p {
+  max-width: 100%;
+}
+
+:global(.gl-mobile) .about h1, :global(.gl-mobile) .about h3 {
+  text-align: center;
+}

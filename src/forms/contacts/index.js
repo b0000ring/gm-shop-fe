@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react'
 import { navigate } from 'gatsby'
 import { Formik } from 'formik'
 import clsx from 'clsx'
+import { toast } from 'react-toastify'
 
 import Button from 'src/components/buttons/Button'
 import styles from './index.module.css'
@@ -76,6 +77,7 @@ function ContactForm({ onSubmit }) {
                 } else {
                   resetForm({})
                   setIsAgree(false)
+                  toast.success('Вопрос успешно отправлен!')
                   getCaptcha()        
                 }
                 setSubmitting(false)
