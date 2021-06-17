@@ -1,0 +1,14 @@
+{
+  "type": "categories", 
+  "name": "categories",
+  "categories": [
+    {
+      "name": "handled",
+      "items": ["000018", "000017","000001", "000005"]
+    },
+    {
+      "name": "controllers",
+      "items": ["000003", "000014", "000013", "000016"]
+    }
+  ]
+}

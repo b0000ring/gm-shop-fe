@@ -5,7 +5,7 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
-      <script 
+      {/* <script 
         type="text/javascript"
         dangerouslySetInnerHTML={{
           __html: `
@@ -19,8 +19,8 @@ export default function HTML(props) {
               accurateTrackBounce:true
             });
           `,
-        }}
-      />
+        }} */}
+      {/* /> */}
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta

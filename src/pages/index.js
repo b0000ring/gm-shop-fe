@@ -19,11 +19,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout> 
       <SEO title="Главная" />
-      <div className={styles.banner}>
+      {/* <div className={styles.banner}>
         <Link to="/catalog">
           <img src={banner} alt="баннер с распродажей" />
         </Link>
-      </div>
+      </div> */}
       <div className="content">
         <ItemsList collection={collection} items={items} title="Новые поступления" />
       </div>
